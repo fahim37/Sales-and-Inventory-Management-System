@@ -47,17 +47,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business Logic Layer\CategoryService.cs" />
+    <Compile Include="Business Logic Layer\CustomerService.cs" />
     <Compile Include="Business Logic Layer\ProductService.cs" />
+    <Compile Include="Business Logic Layer\SaleService.cs" />
     <Compile Include="Business Logic Layer\UserService.cs" />
     <Compile Include="Data Access Layer\CategoryDataAccess.cs" />
+    <Compile Include="Data Access Layer\CustomerDataAccess.cs" />
     <Compile Include="Data Access Layer\DataAccess.cs" />
     <Compile Include="Data Access Layer\ProductDataAccess.cs" />
+    <Compile Include="Data Access Layer\SaleDataAccess.cs" />
     <Compile Include="Data Access Layer\UserDataAccess.cs" />
     <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\Customer.cs" />
     <Compile Include="Entities\Product.cs" />
+    <Compile Include="Entities\Sale.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Presentation Layer\CreateSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\CreateSale.Designer.cs">
+      <DependentUpon>CreateSale.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentation Layer\CreateSale.resx">
+      <DependentUpon>CreateSale.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -80,8 +95,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Presentation Layer\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
