@@ -68,10 +68,37 @@
     <Compile Include="Presentation Layer\CreateSale.Designer.cs">
       <DependentUpon>CreateSale.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Layer\HomeForAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\HomeForAdmin.Designer.cs">
+      <DependentUpon>HomeForAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\HomeForUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\HomeForUser.Designer.cs">
+      <DependentUpon>HomeForUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentation Layer\CreateSale.resx">
       <DependentUpon>CreateSale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\HomeForAdmin.resx">
+      <DependentUpon>HomeForAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\HomeForUser.resx">
+      <DependentUpon>HomeForUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
