@@ -1,4 +1,4 @@
-﻿using Inventory_Management_System_E_.Entities;
+﻿using Sales_and_Inventory_Management_System.Entities;
 using Sales_and_Inventory_Management_System.Data_Access_Layer;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Inventory_Management_System_E_.Data_Access_Layer
+namespace Sales_and_Inventory_Management_System.Data_Access_Layer
 {
     class CustomerDataAccess
     {

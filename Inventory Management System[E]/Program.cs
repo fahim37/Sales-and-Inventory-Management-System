@@ -17,7 +17,7 @@ namespace Inventory_Management_System_E_
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new CreateSale());
         }
     }
 }

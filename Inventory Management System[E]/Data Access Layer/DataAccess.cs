@@ -14,7 +14,7 @@ namespace Sales_and_Inventory_Management_System.Data_Access_Layer
         SqlCommand command;
         public DataAccess()
         {
-            this.connection = new SqlConnection(ConfigurationManager.ConnectionStrings["OOP2[E]"].ConnectionString);
+            this.connection = new SqlConnection(ConfigurationManager.ConnectionStrings["OOP2"].ConnectionString);
             this.connection.Open();
         }
 
@@ -22,7 +22,6 @@ namespace Sales_and_Inventory_Management_System.Data_Access_Layer
         {
             this.command = new SqlCommand(sql, this.connection);
             SqlDataReader reader = this.command.ExecuteReader();
-            //this.connection.Close();
             return reader;
         }
 

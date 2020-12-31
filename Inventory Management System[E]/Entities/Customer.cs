@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Inventory_Management_System_E_.Entities
+namespace Sales_and_Inventory_Management_System.Entities
 {
     class Customer
     {
