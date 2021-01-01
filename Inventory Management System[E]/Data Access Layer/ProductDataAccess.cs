@@ -49,7 +49,7 @@ namespace Sales_and_Inventory_Management_System.Data_Access_Layer
         }
         public List<Product> GetProductsForSearch(string productName)
         {
-            string sql = "SELECT * FROM Products WHERE ProductName LIKE '"+productName+"%'";
+            string sql = "SELECT * FROM Products WHERE ProductName LIKE '%"+productName+"%'";
             this.dataAccess = new DataAccess();
             SqlDataReader reader = this.dataAccess.GetData(sql);
             List<Product> products = new List<Product>();
@@ -67,14 +67,14 @@ namespace Sales_and_Inventory_Management_System.Data_Access_Layer
         }
         public int GetProductQuantity(int productId)
         {
-            string sql = "SELECT Quantity FROM Products WHERE ProductId=" + productId;
+            string sql = "SELECT Quantity from Products where ProductId=" +productId;
             SqlDataReader reader = this.dataAccess.GetData(sql);
             reader.Read();
-            return (int)reader["Quantity"];
+            return (int)reader["Quantity"]; 
         }
         public int UpdateQuantity(int NewQuantity, int id)
         {
-            string sql = "UPDATE Products SET Quantity='" + NewQuantity + "' WHERE CategoryId=" + id;
+            string sql = "UPDATE Products SET Quantity=" + NewQuantity + " WHERE ProductId=" + id;
             int result = this.dataAccess.ExecuteQuery(sql);
             return result;
         }

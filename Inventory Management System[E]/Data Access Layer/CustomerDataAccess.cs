@@ -32,6 +32,21 @@ namespace Sales_and_Inventory_Management_System.Data_Access_Layer
             }
             return customers;
         }
+        public List<Customer> GetCustomerForSearch(string customerName)
+        {
+            string sql = "SELECT * FROM Customers WHERE CustomerName LIKE '%" + customerName + "%'";
+            SqlDataReader reader = this.dataAccess.GetData(sql);
+            List<Customer> customers = new List<Customer>();
+            while (reader.Read())
+            {
+                Customer customer = new Customer();
+                customer.CustomerId = (int)reader["CustomerId"];
+                customer.CustomerName = reader["CustomerName"].ToString();
+                customer.PhoneNo = (int)reader["PhoneNo"];
+                customers.Add(customer);
+            }
+            return customers;
+        }
         public Customer GetCustomer(int id)
         {
             string sql = "SELECT * FROM Customers WHERE CustomerId=" + id;

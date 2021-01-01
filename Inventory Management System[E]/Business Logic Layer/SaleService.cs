@@ -1,4 +1,5 @@
-﻿using Sales_and_Inventory_Management_System.Data_Access_Layer;
+﻿using Inventory_Management_System_E_.Entities;
+using Sales_and_Inventory_Management_System.Data_Access_Layer;
 using Sales_and_Inventory_Management_System.Entities;
 using System;
 using System.Collections.Generic;
@@ -19,14 +20,16 @@ namespace Sales_and_Inventory_Management_System.Business_Logic_Layer
         {
             return this.saleDataAccess.GetAllSalesListByDate(from, to);
         }
-
-        public int CreateSale(string customerName, int customerId, string productName, int productId, string salesDate, int quantity, double unitPrice)
+        public List<CustomerOrder> GetAllSalesListByCustomerId(int id)
         {
-            int quan = 0;
+            return this.saleDataAccess.GetCustomerOrderById(id);
+        }
+        
+        public int CreateSale(string customerName, int customerId, string productName, int productId, string salesDate, int quantity, double unitPrice, int availableQuantity)
+        {
+            int newQuantity = 0;
             double totalPrice = unitPrice * quantity;
-            ProductDataAccess productDataAccess = new ProductDataAccess();
-            quan = productDataAccess.GetProductQuantity(productId);
-            if (quan >= quantity)
+            if (availableQuantity >= quantity)
             {
                 Sale sale = new Sale()
                 {
@@ -39,12 +42,37 @@ namespace Sales_and_Inventory_Management_System.Business_Logic_Layer
                     UnitPrice = unitPrice,
                     TotalPrice = totalPrice
                 };
-                //int newQuantity = quan - quantity;
-                //productDataAccess.UpdateQuantity(newQuantity, productId);
+                newQuantity = availableQuantity - quantity;
+                ProductDataAccess productDataAccess = new ProductDataAccess();
+                productDataAccess.UpdateQuantity(newQuantity, productId);
                 saleDataAccess = new SaleDataAccess();
                 return saleDataAccess.CreateSale(sale);
             }
             else return 0;
+        }
+        public int RemoveOrder(int orderId,int productId, int availableQuantity,int quantity)
+        {
+            int newQuantity = 0;
+            newQuantity = availableQuantity + quantity;
+            ProductDataAccess productDataAccess = new ProductDataAccess();
+            productDataAccess.UpdateQuantity(newQuantity, productId);
+            SaleDataAccess saleDataAccess = new SaleDataAccess();
+            return saleDataAccess.RemoveOrder(orderId);
+        }
+        public string TotalOrderedAmount(int id)
+        {
+            SaleDataAccess saleDataAccess = new SaleDataAccess();
+            return saleDataAccess.TotalAmount(id);
+        }
+        public string LastOrderedDate(int id)
+        {
+            SaleDataAccess saleDataAccess = new SaleDataAccess();
+            return saleDataAccess.LastOrderedDate(id);
+        }
+        public string OrderCount(int id)
+        {
+            SaleDataAccess saleDataAccess = new SaleDataAccess();
+            return saleDataAccess.OrderCount(id);
         }
     }
 }

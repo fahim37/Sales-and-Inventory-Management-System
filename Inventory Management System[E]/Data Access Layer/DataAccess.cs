@@ -32,6 +32,13 @@ namespace Sales_and_Inventory_Management_System.Data_Access_Layer
             this.connection.Close();
             return result;
         }
+        public string ExecuteScalar(string sql)
+        {
+            this.command = new SqlCommand(sql, this.connection);
+            string result = this.command.ExecuteScalar().ToString();
+            this.connection.Close();
+            return result;
+        }
 
         public void Dispose()
         {

@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Inventory_Management_System_E_.Entities;
 
 namespace Sales_and_Inventory_Management_System.Data_Access_Layer
 {
@@ -41,6 +42,53 @@ namespace Sales_and_Inventory_Management_System.Data_Access_Layer
                 sales.Add(sale);
             }
             return sales;
+        }
+        public List<CustomerOrder> GetCustomerOrderById(int id)
+        {
+            string sql = "SELECT * FROM Sales WHERE CustomerId= "+ id;
+            this.dataAccess = new DataAccess();
+            SqlDataReader reader = this.dataAccess.GetData(sql);
+            List<CustomerOrder> customerOrders = new List<CustomerOrder>();
+            while (reader.Read())
+            {
+                CustomerOrder customerOrder = new CustomerOrder();
+                customerOrder.OrderId = (int)reader["OrderId"];
+                customerOrder.ProductName = reader["ProductName"].ToString();
+                customerOrder.ProductId = (int)reader["ProductId"];
+                customerOrder.SalesDate = reader["SalesDate"].ToString();
+                customerOrder.Quantity = (int)reader["Quantity"];
+                customerOrder.UnitPrice = Convert.ToDouble(reader["UnitPrice"]);
+                customerOrder.TotalPrice = Convert.ToDouble(reader["TotalPrice"]);
+                customerOrders.Add(customerOrder);
+            }
+            return customerOrders;
+        }
+        public int RemoveOrder(int id)
+        {
+            string sql = "DELETE FROM Sales WHERE OrderId=" + id;
+            int result = this.dataAccess.ExecuteQuery(sql);
+            return result;
+        }
+        public string TotalAmount(int id)
+        {
+            string sql = "SELECT SUM (TotalPrice) FROM Sales WHERE CustomerId="+id;
+            this.dataAccess = new DataAccess();
+            string result = this.dataAccess.ExecuteScalar(sql);
+            return result;
+        }
+        public string LastOrderedDate(int id)
+        {
+            string sql = "SELECT MAX (SalesDate) FROM Sales WHERE CustomerId=" + id;
+            this.dataAccess = new DataAccess();
+            string result = this.dataAccess.ExecuteScalar(sql);
+            return result;
+        }
+        public string OrderCount(int id)
+        {
+            string sql = "SELECT COUNT (ProductId) FROM Sales WHERE CustomerId=" + id;
+            this.dataAccess = new DataAccess();
+            string result = this.dataAccess.ExecuteScalar(sql);
+            return result;
         }
     }
 }
