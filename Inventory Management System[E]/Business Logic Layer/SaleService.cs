@@ -1,6 +1,5 @@
-﻿using Inventory_Management_System_E_.Entities;
+﻿using Sales_and_Inventory_Management_System.Entities;
 using Sales_and_Inventory_Management_System.Data_Access_Layer;
-using Sales_and_Inventory_Management_System.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

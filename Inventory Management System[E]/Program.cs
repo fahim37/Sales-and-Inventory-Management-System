@@ -1,11 +1,11 @@
-﻿using Inventory_Management_System_E_.Presentation_Layer;
+﻿using Sales_and_Inventory_Management_System.Presentation_Layer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Inventory_Management_System_E_
+namespace Sales_and_Inventory_Management_System
 {
     static class Program
     {
@@ -17,7 +17,7 @@ namespace Inventory_Management_System_E_
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CreateSale());
+            Application.Run(new CustomerManagement());
         }
     }
 }

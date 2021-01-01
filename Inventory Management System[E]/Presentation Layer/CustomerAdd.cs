@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Inventory_Management_System_E_.Presentation_Layer
+namespace Sales_and_Inventory_Management_System.Presentation_Layer
 {
     public partial class CustomerAdd : Form
     {
@@ -27,6 +27,13 @@ namespace Inventory_Management_System_E_.Presentation_Layer
         {
             CustomerService customerService = new CustomerService();
             int result = customerService.AddNewCustomer(customerNameTextBox.Text, phoneNoTextBox.Text);
+            this.Hide();
+            CreateSale createSale = new CreateSale();
+            createSale.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
             this.Hide();
             CreateSale createSale = new CreateSale();
             createSale.Show();

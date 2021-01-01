@@ -6,7 +6,6 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Inventory_Management_System_E_.Entities;
 
 namespace Sales_and_Inventory_Management_System.Data_Access_Layer
 {

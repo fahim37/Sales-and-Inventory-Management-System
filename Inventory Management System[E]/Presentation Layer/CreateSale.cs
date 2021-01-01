@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Inventory_Management_System_E_.Presentation_Layer
+namespace Sales_and_Inventory_Management_System.Presentation_Layer
 {
     public partial class CreateSale : Form
     {
