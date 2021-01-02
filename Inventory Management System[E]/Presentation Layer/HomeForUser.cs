@@ -81,5 +81,26 @@ namespace Inventory_Management_System_E_.Presentation_Layer
                 MessageBox.Show("Error updating user");
             }
         }
+
+        private void CategoryManagementButton_Click(object sender, EventArgs e)
+        {
+            CategoryManagement categoryManagement = new CategoryManagement(username);
+            categoryManagement.Show();
+            this.Hide();
+        }
+
+        private void ProductManagementButton_Click(object sender, EventArgs e)
+        {
+            ProductManagement productManagement = new ProductManagement(username);
+            productManagement.Show();
+            this.Hide();
+        }
+
+        private void logOutButton_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
+        }
     }
 }

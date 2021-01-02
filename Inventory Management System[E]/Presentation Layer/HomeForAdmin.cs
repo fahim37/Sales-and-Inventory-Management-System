@@ -14,8 +14,10 @@ namespace Inventory_Management_System_E_.Presentation_Layer
     public partial class HomeForAdmin : Form
     {
         int id = 0;
-        public HomeForAdmin()
+        string username;
+        public HomeForAdmin(string username)
         {
+            this.username = username;
             InitializeComponent();
             addUserButton.Click += this.RefreshGridView;
             updateUserButton.Click += this.RefreshGridView;
@@ -127,6 +129,27 @@ namespace Inventory_Management_System_E_.Presentation_Layer
                 }
             }
             
+        }
+
+        private void CategoryManagementButton_Click(object sender, EventArgs e)
+        {
+            CategoryManagement categoryManagement = new CategoryManagement(username);
+            categoryManagement.Show();
+            this.Hide();
+        }
+
+        private void ProductManagementButton_Click(object sender, EventArgs e)
+        {
+            ProductManagement productManagement = new ProductManagement(username);
+            productManagement.Show();
+            this.Hide();
+        }
+
+        private void logOutButton_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
         }
     }
 }

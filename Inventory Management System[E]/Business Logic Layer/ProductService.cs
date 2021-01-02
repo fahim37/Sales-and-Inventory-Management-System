@@ -33,6 +33,26 @@ namespace Sales_and_Inventory_Management_System.Business_Logic_Layer
             productDataAcess = new ProductDataAccess();
             return productDataAcess.InsertProduct(product);
         }
+        public int UpdateProduct(int productId,string productName, string price, string quantity, string categoryName)
+        {
+            int categoryId = productDataAcess.GetCategoryId(categoryName);
+            Product product = new Product()
+            {
+                ProductId=productId,
+                ProductName = productName,
+                Price = Convert.ToDouble(price),
+                Quantity = Convert.ToInt32(quantity),
+                CategoryId = categoryId
+            };
+            productDataAcess = new ProductDataAccess();
+            return productDataAcess.UpdateProduct(product);
+        }
+
+        public int DeleteProduct(int productId)
+        {
+            return this.productDataAcess.DeleteProduct(productId);
+        }
+
         public List<Product> GetProductListForSearch(string productName)
         {
             return productDataAcess.GetProductsForSearch(productName);

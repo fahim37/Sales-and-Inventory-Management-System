@@ -38,7 +38,7 @@ namespace Inventory_Management_System_E_.Presentation_Layer
                     userService = new UserService();
                     if (userService.GetUserType(usernameTextBox.Text)=="Admin")
                     {
-                        HomeForAdmin homeForAdmin = new HomeForAdmin();
+                        HomeForAdmin homeForAdmin = new HomeForAdmin(usernameTextBox.Text);
                         homeForAdmin.Show();
                         this.Hide();
                     }

@@ -41,6 +41,13 @@ namespace Sales_and_Inventory_Management_System.Data_Access_Layer
             category.CategoryName = reader["CategoryName"].ToString();
             return category;
         }
+        public string GetCategoryName(int id)
+        {
+            string sql = "SELECT * FROM Categories WHERE CategoryId='" + id + "'";
+            SqlDataReader reader = this.dataAccess.GetData(sql);
+            reader.Read();
+            return reader["CategoryName"].ToString();
+        }
 
         public int InsertCategory(Category category)
         {
