@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Sales_and_Inventory_Management_System.Properties {
+namespace Inventory_Management_System_E_.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
