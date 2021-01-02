@@ -42,6 +42,50 @@ namespace Sales_and_Inventory_Management_System.Data_Access_Layer
             }
             return sales;
         }
+        public List<Sale> GetAllSalesListByDateAndId(string from, string to,int id)
+        {
+            string sql = "SELECT * FROM Sales WHERE SalesDate BETWEEN '" + from + "' AND '" + to + "' AND CustomerId="+id;
+            this.dataAccess = new DataAccess();
+            SqlDataReader reader = this.dataAccess.GetData(sql);
+            List<Sale> sales = new List<Sale>();
+            while (reader.Read())
+            {
+                Sale sale = new Sale();
+                sale.OrderId = (int)reader["OrderId"];
+                sale.CustomerName = reader["CustomerName"].ToString();
+                sale.CustomerId = (int)reader["CustomerId"];
+                sale.ProductName = reader["ProductName"].ToString();
+                sale.ProductId = (int)reader["ProductId"];
+                sale.SalesDate = reader["SalesDate"].ToString();
+                sale.Quantity = (int)reader["Quantity"];
+                sale.UnitPrice = Convert.ToDouble(reader["UnitPrice"]);
+                sale.TotalPrice = Convert.ToDouble(reader["TotalPrice"]);
+                sales.Add(sale);
+            }
+            return sales;
+        }
+        public List<Sale> GetCustomerOrdersListById(int id)
+        {
+            string sql = "SELECT * FROM Sales WHERE CustomerId= " + id;
+            this.dataAccess = new DataAccess();
+            SqlDataReader reader = this.dataAccess.GetData(sql);
+            List<Sale> sales = new List<Sale>();
+            while (reader.Read())
+            {
+                Sale sale = new Sale();
+                sale.OrderId = (int)reader["OrderId"];
+                sale.CustomerName = reader["CustomerName"].ToString();
+                sale.CustomerId = (int)reader["CustomerId"];
+                sale.ProductName = reader["ProductName"].ToString();
+                sale.ProductId = (int)reader["ProductId"];
+                sale.SalesDate = reader["SalesDate"].ToString();
+                sale.Quantity = (int)reader["Quantity"];
+                sale.UnitPrice = Convert.ToDouble(reader["UnitPrice"]);
+                sale.TotalPrice = Convert.ToDouble(reader["TotalPrice"]);
+                sales.Add(sale);
+            }
+            return sales;
+        }
         public List<CustomerOrder> GetCustomerOrderById(int id)
         {
             string sql = "SELECT * FROM Sales WHERE CustomerId= "+ id;
@@ -62,9 +106,35 @@ namespace Sales_and_Inventory_Management_System.Data_Access_Layer
             }
             return customerOrders;
         }
+        public List<CustomerOrder> GetCustomerOrderByDateAndId(string from, string to, int id)
+        {
+            string sql = "SELECT * FROM Sales WHERE SalesDate BETWEEN '" + from + "' AND '" + to + "' AND CustomerId=" + id;
+            this.dataAccess = new DataAccess();
+            SqlDataReader reader = this.dataAccess.GetData(sql);
+            List<CustomerOrder> customerOrders = new List<CustomerOrder>();
+            while (reader.Read())
+            {
+                CustomerOrder customerOrder = new CustomerOrder();
+                customerOrder.OrderId = (int)reader["OrderId"];
+                customerOrder.ProductName = reader["ProductName"].ToString();
+                customerOrder.ProductId = (int)reader["ProductId"];
+                customerOrder.SalesDate = reader["SalesDate"].ToString();
+                customerOrder.Quantity = (int)reader["Quantity"];
+                customerOrder.UnitPrice = Convert.ToDouble(reader["UnitPrice"]);
+                customerOrder.TotalPrice = Convert.ToDouble(reader["TotalPrice"]);
+                customerOrders.Add(customerOrder);
+            }
+            return customerOrders;
+        }
         public int RemoveOrder(int id)
         {
             string sql = "DELETE FROM Sales WHERE OrderId=" + id;
+            int result = this.dataAccess.ExecuteQuery(sql);
+            return result;
+        }
+        public int RemoveOrderByCusId(int id)
+        {
+            string sql = "DELETE FROM Sales WHERE CustomerId=" + id;
             int result = this.dataAccess.ExecuteQuery(sql);
             return result;
         }
@@ -89,6 +159,34 @@ namespace Sales_and_Inventory_Management_System.Data_Access_Layer
             string result = this.dataAccess.ExecuteScalar(sql);
             return result;
         }
+        public string TotalAmountByDate(int id, string from, string to)
+        {
+            string sql = "SELECT SUM (TotalPrice) FROM Sales WHERE SalesDate BETWEEN '" + from + "' AND '" + to + "' And CustomerId=" + id;
+            this.dataAccess = new DataAccess();
+            string result = this.dataAccess.ExecuteScalar(sql);
+            return result;
+        }
+        public string LastOrderedDateBydate(int id, string from, string to)
+        {
+            string sql = "SELECT MAX (SalesDate) FROM Sales WHERE SalesDate BETWEEN '" + from + "' AND '" + to + "' And CustomerId=" + id;
+            this.dataAccess = new DataAccess();
+            string result = this.dataAccess.ExecuteScalar(sql);
+            return result;
+        }
+        public string OrderCountBydate(int id, string from, string to)
+        {
+            string sql = "SELECT COUNT (ProductId) FROM Sales WHERE SalesDate BETWEEN '" + from + "' AND '" + to + "' And CustomerId=" + id;
+            this.dataAccess = new DataAccess();
+            string result = this.dataAccess.ExecuteScalar(sql);
+            return result;
+        }
+        public int UpdateCustomerName(string customerName, int customerId)
+        {
+            string sql = "UPDATE Sales SET CustomerName='" + customerName + "' WHERE CustomerId=" + customerId;
+            int result = this.dataAccess.ExecuteQuery(sql);
+            return result;
+        }
+        
     }
 }
 

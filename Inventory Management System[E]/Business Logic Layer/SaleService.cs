@@ -19,11 +19,25 @@ namespace Sales_and_Inventory_Management_System.Business_Logic_Layer
         {
             return this.saleDataAccess.GetAllSalesListByDate(from, to);
         }
+        public List<Sale> GetAllSalesListByDateAndId(string from, string to, int id)
+        {
+            return this.saleDataAccess.GetAllSalesListByDateAndId(from, to, id);
+        }
+        public List<Sale> GetCustomerOrdersListById(int id)
+        {
+            return this.saleDataAccess.GetCustomerOrdersListById(id);
+        }
         public List<CustomerOrder> GetAllSalesListByCustomerId(int id)
         {
             return this.saleDataAccess.GetCustomerOrderById(id);
         }
+        public List<CustomerOrder> GetCustomerOrderByDateAndId(string from, string to, int id)
+        {
+            return this.saleDataAccess.GetCustomerOrderByDateAndId(from, to, id);
+        }
         
+        
+
         public int CreateSale(string customerName, int customerId, string productName, int productId, string salesDate, int quantity, double unitPrice, int availableQuantity)
         {
             int newQuantity = 0;
@@ -44,34 +58,45 @@ namespace Sales_and_Inventory_Management_System.Business_Logic_Layer
                 newQuantity = availableQuantity - quantity;
                 ProductDataAccess productDataAccess = new ProductDataAccess();
                 productDataAccess.UpdateQuantity(newQuantity, productId);
-                saleDataAccess = new SaleDataAccess();
                 return saleDataAccess.CreateSale(sale);
             }
             else return 0;
         }
-        public int RemoveOrder(int orderId,int productId, int availableQuantity,int quantity)
+        public int RemoveOrder(int orderId,int productId, int availableQuantity,int orderedQuantity)
         {
             int newQuantity = 0;
-            newQuantity = availableQuantity + quantity;
+            newQuantity = availableQuantity + orderedQuantity;
             ProductDataAccess productDataAccess = new ProductDataAccess();
             productDataAccess.UpdateQuantity(newQuantity, productId);
-            SaleDataAccess saleDataAccess = new SaleDataAccess();
             return saleDataAccess.RemoveOrder(orderId);
         }
         public string TotalOrderedAmount(int id)
         {
-            SaleDataAccess saleDataAccess = new SaleDataAccess();
             return saleDataAccess.TotalAmount(id);
         }
         public string LastOrderedDate(int id)
         {
-            SaleDataAccess saleDataAccess = new SaleDataAccess();
             return saleDataAccess.LastOrderedDate(id);
         }
         public string OrderCount(int id)
         {
-            SaleDataAccess saleDataAccess = new SaleDataAccess();
             return saleDataAccess.OrderCount(id);
+        }
+        public string TotalOrderedAmountByDate(int id, string from, string to)
+        {
+            return saleDataAccess.TotalAmountByDate(id,from,to);
+        }
+        public string LastOrderedDateByDate(int id, string from, string to)
+        {
+            return saleDataAccess.LastOrderedDateBydate(id, from, to);
+        }
+        public string OrderCountByDate(int id, string from, string to)
+        {
+            return saleDataAccess.OrderCountBydate(id, from, to);
+        }
+        public void UpdateCustomerName(string customerName, int customerId)
+        {
+            saleDataAccess.UpdateCustomerName(customerName, customerId);
         }
     }
 }

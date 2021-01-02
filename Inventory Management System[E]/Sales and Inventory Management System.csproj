@@ -63,17 +63,17 @@
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\Sale.cs" />
     <Compile Include="Entities\User.cs" />
-    <Compile Include="Presentation Layer\CreateSale.cs">
+    <Compile Include="Presentation Layer\OrderManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\CreateSale.Designer.cs">
-      <DependentUpon>CreateSale.cs</DependentUpon>
+    <Compile Include="Presentation Layer\OrderManagement.Designer.cs">
+      <DependentUpon>OrderManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\CustomerAdd.cs">
+    <Compile Include="Presentation Layer\IncertCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\CustomerAdd.Designer.cs">
-      <DependentUpon>CustomerAdd.cs</DependentUpon>
+    <Compile Include="Presentation Layer\IncertCustomer.Designer.cs">
+      <DependentUpon>IncertCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\CustomerManagement.cs">
       <SubType>Form</SubType>
@@ -81,19 +81,13 @@
     <Compile Include="Presentation Layer\CustomerManagement.Designer.cs">
       <DependentUpon>CustomerManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentation Layer\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Presentation Layer\CreateSale.resx">
-      <DependentUpon>CreateSale.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\OrderManagement.resx">
+      <DependentUpon>OrderManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\CustomerAdd.resx">
-      <DependentUpon>CustomerAdd.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\IncertCustomer.resx">
+      <DependentUpon>IncertCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\CustomerManagement.resx">
       <DependentUpon>CustomerManagement.cs</DependentUpon>

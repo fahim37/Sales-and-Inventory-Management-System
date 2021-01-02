@@ -1,7 +1,7 @@
 ﻿
 namespace Sales_and_Inventory_Management_System.Presentation_Layer
 {
-    partial class CreateSale
+    partial class OrderManagement
     {
         /// <summary>
         /// Required designer variable.
@@ -54,7 +54,6 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
             this.customersDataGridView = new System.Windows.Forms.DataGridView();
             this.addNewCustomer = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -63,6 +62,13 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.OrdersByDateButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.tillDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.fromDateTimePicker = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersDataGridView)).BeginInit();
@@ -70,6 +76,8 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // productsDataGridView
@@ -98,7 +106,7 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             // 
             this.quantityTextBox.Location = new System.Drawing.Point(134, 90);
             this.quantityTextBox.Name = "quantityTextBox";
-            this.quantityTextBox.Size = new System.Drawing.Size(191, 20);
+            this.quantityTextBox.Size = new System.Drawing.Size(191, 22);
             this.quantityTextBox.TabIndex = 9;
             // 
             // salesDataGridView
@@ -107,10 +115,10 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.salesDataGridView.AllowUserToDeleteRows = false;
             this.salesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.salesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.salesDataGridView.Location = new System.Drawing.Point(410, 465);
+            this.salesDataGridView.Location = new System.Drawing.Point(0, 84);
             this.salesDataGridView.Name = "salesDataGridView";
             this.salesDataGridView.ReadOnly = true;
-            this.salesDataGridView.Size = new System.Drawing.Size(857, 301);
+            this.salesDataGridView.Size = new System.Drawing.Size(978, 297);
             this.salesDataGridView.TabIndex = 10;
             this.salesDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.salesDataGridView_CellClick);
             // 
@@ -118,7 +126,7 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             // 
             this.saleDateTimePicker.Location = new System.Drawing.Point(134, 128);
             this.saleDateTimePicker.Name = "saleDateTimePicker";
-            this.saleDateTimePicker.Size = new System.Drawing.Size(191, 20);
+            this.saleDateTimePicker.Size = new System.Drawing.Size(191, 22);
             this.saleDateTimePicker.TabIndex = 13;
             // 
             // placeOrderButton
@@ -159,7 +167,7 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             // 
             this.customerNameTextBox.Location = new System.Drawing.Point(134, 19);
             this.customerNameTextBox.Name = "customerNameTextBox";
-            this.customerNameTextBox.Size = new System.Drawing.Size(191, 20);
+            this.customerNameTextBox.Size = new System.Drawing.Size(191, 22);
             this.customerNameTextBox.TabIndex = 17;
             // 
             // label4
@@ -177,7 +185,7 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             // 
             this.productNameTextBox.Location = new System.Drawing.Point(134, 54);
             this.productNameTextBox.Name = "productNameTextBox";
-            this.productNameTextBox.Size = new System.Drawing.Size(191, 20);
+            this.productNameTextBox.Size = new System.Drawing.Size(191, 22);
             this.productNameTextBox.TabIndex = 19;
             // 
             // label5
@@ -214,7 +222,7 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(638, 795);
+            this.label7.Location = new System.Drawing.Point(404, 302);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(106, 16);
             this.label7.TabIndex = 23;
@@ -224,7 +232,7 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             // 
             this.lastOrderedLebel.AutoSize = true;
             this.lastOrderedLebel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastOrderedLebel.Location = new System.Drawing.Point(750, 794);
+            this.lastOrderedLebel.Location = new System.Drawing.Point(516, 301);
             this.lastOrderedLebel.Name = "lastOrderedLebel";
             this.lastOrderedLebel.Size = new System.Drawing.Size(0, 20);
             this.lastOrderedLebel.TabIndex = 24;
@@ -253,24 +261,24 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label9.Location = new System.Drawing.Point(5, 19);
+            this.label9.Location = new System.Drawing.Point(5, 22);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(123, 16);
+            this.label9.Size = new System.Drawing.Size(106, 16);
             this.label9.TabIndex = 28;
-            this.label9.Text = "Remove Product";
+            this.label9.Text = "Product Name";
             // 
             // RemoveTextBox
             // 
-            this.RemoveTextBox.Location = new System.Drawing.Point(134, 18);
+            this.RemoveTextBox.Location = new System.Drawing.Point(134, 21);
             this.RemoveTextBox.Name = "RemoveTextBox";
-            this.RemoveTextBox.Size = new System.Drawing.Size(191, 20);
+            this.RemoveTextBox.Size = new System.Drawing.Size(191, 22);
             this.RemoveTextBox.TabIndex = 27;
             // 
             // removeProductbutton
             // 
             this.removeProductbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.removeProductbutton.ForeColor = System.Drawing.Color.Red;
-            this.removeProductbutton.Location = new System.Drawing.Point(134, 56);
+            this.removeProductbutton.Location = new System.Drawing.Point(134, 59);
             this.removeProductbutton.Name = "removeProductbutton";
             this.removeProductbutton.Size = new System.Drawing.Size(191, 47);
             this.removeProductbutton.TabIndex = 29;
@@ -316,17 +324,6 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.button1.Text = "Back";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label12.Location = new System.Drawing.Point(407, 446);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(49, 16);
-            this.label12.TabIndex = 35;
-            this.label12.Text = "Orders";
-            // 
             // customersDataGridView
             // 
             this.customersDataGridView.AllowUserToAddRows = false;
@@ -360,12 +357,14 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.groupBox1.Controls.Add(this.customersDataGridView);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.totalOrderedAmount);
+            this.groupBox1.Controls.Add(this.lastOrderedLebel);
             this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.orderCount);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 44);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(641, 380);
+            this.groupBox1.Size = new System.Drawing.Size(735, 380);
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customers";
@@ -399,6 +398,7 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.groupBox2.Controls.Add(this.placeOrderButton);
             this.groupBox2.Controls.Add(this.saleDateTimePicker);
             this.groupBox2.Controls.Add(this.quantityTextBox);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(13, 465);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(346, 230);
@@ -411,6 +411,7 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.groupBox3.Controls.Add(this.removeProductbutton);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.RemoveTextBox);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(13, 708);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(345, 118);
@@ -426,30 +427,100 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.groupBox4.Controls.Add(this.categoryComboBox);
             this.groupBox4.Controls.Add(this.productsDataGridView);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(665, 44);
+            this.groupBox4.Location = new System.Drawing.Point(775, 44);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(602, 380);
             this.groupBox4.TabIndex = 39;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Products";
             // 
-            // CreateSale
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.groupBox6);
+            this.groupBox5.Controls.Add(this.salesDataGridView);
+            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox5.Location = new System.Drawing.Point(399, 463);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(978, 381);
+            this.groupBox5.TabIndex = 40;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Orders";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.OrdersByDateButton);
+            this.groupBox6.Controls.Add(this.label2);
+            this.groupBox6.Controls.Add(this.label12);
+            this.groupBox6.Controls.Add(this.tillDateTimePicker);
+            this.groupBox6.Controls.Add(this.fromDateTimePicker);
+            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.Location = new System.Drawing.Point(119, 21);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(710, 57);
+            this.groupBox6.TabIndex = 31;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Customers Orders By date";
+            // 
+            // OrdersByDateButton
+            // 
+            this.OrdersByDateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OrdersByDateButton.ForeColor = System.Drawing.Color.DarkGreen;
+            this.OrdersByDateButton.Location = new System.Drawing.Point(583, 13);
+            this.OrdersByDateButton.Name = "OrdersByDateButton";
+            this.OrdersByDateButton.Size = new System.Drawing.Size(108, 37);
+            this.OrdersByDateButton.TabIndex = 37;
+            this.OrdersByDateButton.Text = "Find";
+            this.OrdersByDateButton.UseVisualStyleBackColor = true;
+            this.OrdersByDateButton.Click += new System.EventHandler(this.OrdersByDateButton_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(322, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 16);
+            this.label2.TabIndex = 39;
+            this.label2.Text = "Till :";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(31, 24);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(51, 16);
+            this.label12.TabIndex = 38;
+            this.label12.Text = "From :";
+            // 
+            // tillDateTimePicker
+            // 
+            this.tillDateTimePicker.Location = new System.Drawing.Point(366, 20);
+            this.tillDateTimePicker.Name = "tillDateTimePicker";
+            this.tillDateTimePicker.Size = new System.Drawing.Size(198, 20);
+            this.tillDateTimePicker.TabIndex = 1;
+            // 
+            // fromDateTimePicker
+            // 
+            this.fromDateTimePicker.Location = new System.Drawing.Point(88, 24);
+            this.fromDateTimePicker.Name = "fromDateTimePicker";
+            this.fromDateTimePicker.Size = new System.Drawing.Size(202, 20);
+            this.fromDateTimePicker.TabIndex = 0;
+            // 
+            // OrderManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1279, 856);
+            this.ClientSize = new System.Drawing.Size(1389, 891);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.lastOrderedLebel);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.salesDataGridView);
             this.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.Name = "CreateSale";
+            this.Name = "OrderManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateSale";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreateSale_FormClosing);
@@ -465,8 +536,10 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -496,7 +569,6 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DataGridView customersDataGridView;
         private System.Windows.Forms.Button addNewCustomer;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -505,5 +577,12 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox customerSearchTextBox;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button OrdersByDateButton;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DateTimePicker tillDateTimePicker;
+        private System.Windows.Forms.DateTimePicker fromDateTimePicker;
     }
 }

@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Sales_and_Inventory_Management_System.Presentation_Layer
 {
-    public partial class CustomerAdd : Form
+    public partial class IncertCustomer : Form
     {
-        public CustomerAdd()
+        public IncertCustomer()
         {
             InitializeComponent();
         }
@@ -23,19 +23,19 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             Application.Exit();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void incertButton_Click(object sender, EventArgs e)
         {
             CustomerService customerService = new CustomerService();
             int result = customerService.AddNewCustomer(customerNameTextBox.Text, phoneNoTextBox.Text);
             this.Hide();
-            CreateSale createSale = new CreateSale();
+            OrderManagement createSale = new OrderManagement();
             createSale.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void backButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            CreateSale createSale = new CreateSale();
+            OrderManagement createSale = new OrderManagement();
             createSale.Show();
         }
     }

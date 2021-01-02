@@ -78,5 +78,6 @@ namespace Sales_and_Inventory_Management_System.Data_Access_Layer
             int result = this.dataAccess.ExecuteQuery(sql);
             return result;
         }
+        
     }
 }

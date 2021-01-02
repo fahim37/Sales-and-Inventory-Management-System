@@ -1,7 +1,7 @@
 ﻿
 namespace Sales_and_Inventory_Management_System.Presentation_Layer
 {
-    partial class CustomerAdd
+    partial class IncertCustomer
     {
         /// <summary>
         /// Required designer variable.
@@ -34,9 +34,9 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.incertButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.backButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,7 +78,7 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.incertButton);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.phoneNoTextBox);
@@ -91,6 +91,18 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Details";
             // 
+            // incertButton
+            // 
+            this.incertButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.incertButton.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.incertButton.Location = new System.Drawing.Point(215, 141);
+            this.incertButton.Name = "incertButton";
+            this.incertButton.Size = new System.Drawing.Size(152, 47);
+            this.incertButton.TabIndex = 35;
+            this.incertButton.Text = "Incert";
+            this.incertButton.UseVisualStyleBackColor = true;
+            this.incertButton.Click += new System.EventHandler(this.incertButton_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -102,40 +114,28 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.label2.TabIndex = 22;
             this.label2.Text = "Add New Customer";
             // 
-            // button2
+            // backButton
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.button2.Location = new System.Drawing.Point(215, 141);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(152, 47);
-            this.button2.TabIndex = 35;
-            this.button2.Text = "Add Customer";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.backButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.backButton.Location = new System.Drawing.Point(12, 12);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(75, 23);
+            this.backButton.TabIndex = 23;
+            this.backButton.Text = "Back";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Back";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // CustomerAdd
+            // IncertCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(553, 333);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.backButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "CustomerAdd";
+            this.Name = "IncertCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CustomerAdd";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CustomerAdd_FormClosing);
@@ -154,7 +154,7 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button incertButton;
+        private System.Windows.Forms.Button backButton;
     }
 }

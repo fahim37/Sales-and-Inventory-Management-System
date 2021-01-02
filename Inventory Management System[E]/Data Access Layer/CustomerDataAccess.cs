@@ -27,7 +27,7 @@ namespace Sales_and_Inventory_Management_System.Data_Access_Layer
                 Customer customer = new Customer();
                 customer.CustomerId = (int)reader["CustomerId"];
                 customer.CustomerName = reader["CustomerName"].ToString();
-                customer.PhoneNo = (int)reader["PhoneNo"];
+                customer.PhoneNo = reader["PhoneNo"].ToString();
                 customers.Add(customer);
             }
             return customers;
@@ -42,7 +42,7 @@ namespace Sales_and_Inventory_Management_System.Data_Access_Layer
                 Customer customer = new Customer();
                 customer.CustomerId = (int)reader["CustomerId"];
                 customer.CustomerName = reader["CustomerName"].ToString();
-                customer.PhoneNo = (int)reader["PhoneNo"];
+                customer.PhoneNo = reader["PhoneNo"].ToString();
                 customers.Add(customer);
             }
             return customers;
@@ -55,7 +55,7 @@ namespace Sales_and_Inventory_Management_System.Data_Access_Layer
             Customer customer = new Customer();
             customer.CustomerId = (int)reader["CustomerId"];
             customer.CustomerName = reader["CustomerName"].ToString();
-            customer.PhoneNo = (int)reader["PhoneNo"];
+            customer.PhoneNo = reader["PhoneNo"].ToString();
             return customer;
         }
         public int InsertCustomer(Customer customer)
@@ -63,9 +63,15 @@ namespace Sales_and_Inventory_Management_System.Data_Access_Layer
             string sql = "INSERT INTO Customers(CustomerName,PhoneNo) VALUES('" + customer.CustomerName + "'," + customer.PhoneNo + ")";
             return this.dataAccess.ExecuteQuery(sql);
         }
-        public int UpdateCategory(Customer customer)
+        public int UpdateCustomer(Customer customer)
         {
             string sql = "UPDATE Customers SET CustomerName='" + customer.CustomerName + "',PhoneNo="+customer.PhoneNo+" WHERE CustomerId=" + customer.CustomerId;
+            int result = this.dataAccess.ExecuteQuery(sql);
+            return result;
+        }
+        public int RemoveCustomer(int id)
+        {
+            string sql = "DELETE FROM Customers WHERE CustomerId=" + id;
             int result = this.dataAccess.ExecuteQuery(sql);
             return result;
         }

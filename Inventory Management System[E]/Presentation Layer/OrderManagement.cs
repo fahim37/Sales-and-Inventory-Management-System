@@ -11,21 +11,24 @@ using System.Windows.Forms;
 
 namespace Sales_and_Inventory_Management_System.Presentation_Layer
 {
-    public partial class CreateSale : Form
+    public partial class OrderManagement : Form
     {
         int orderId=0;
         int customerId=0;
         int productId=0;
         double unitPrice=0;
         int availableQuantity=0;
-        int removableQuantity = 0;
-        public CreateSale()
+        //int removableQuantity = 0;
+        int orderedQuantity = 0;
+        public OrderManagement()
         {
             InitializeComponent();
             placeOrderButton.Click += this.RefreshGridview;
             placeOrderButton.Click += this.ClearFields;
             removeProductbutton.Click += this.RefreshGridview;
             removeProductbutton.Click += this.ClearFields;
+            placeOrderButton.Click += this.RefreshLabels;
+            removeProductbutton.Click += this.RefreshLabels;
         }
 
         private void CreateSale_FormClosing(object sender, FormClosingEventArgs e)
@@ -59,7 +62,7 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             customersDataGridView.DataSource = customerService.GetListOfCustomer();
             ProductService productService = new ProductService();
             productsDataGridView.DataSource = productService.GetProductList();
-         
+            categoryComboBox.Text = string.Empty;
         }
         void RefreshGridview(object sender, EventArgs e)
         {
@@ -69,14 +72,17 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             customersDataGridView.DataSource = customerService.GetListOfCustomer();
             SaleService saleService = new SaleService();
             salesDataGridView.DataSource = saleService.GetAllSalesListByCustomerId(customerId);
+        }
+        void RefreshLabels(object sender, EventArgs e)
+        {
+            SaleService saleService = new SaleService();
             totalOrderedAmount.Text = saleService.TotalOrderedAmount(customerId);
             lastOrderedLebel.Text = saleService.LastOrderedDate(customerId);
             orderCount.Text = saleService.OrderCount(customerId);
-
         }
         void ClearFields(object sender, EventArgs e)
         {
-            productNameTextBox.Text = quantityTextBox.Text = RemoveTextBox.Text = string.Empty;
+            productNameTextBox.Text = quantityTextBox.Text = RemoveTextBox.Text = categoryComboBox.Text = string.Empty;
 
         }
 
@@ -105,7 +111,7 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             RemoveTextBox.Text = salesDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
             orderId = (int)salesDataGridView.Rows[e.RowIndex].Cells[0].Value;
             productId = (int)salesDataGridView.Rows[e.RowIndex].Cells[2].Value;
-            removableQuantity = (int)salesDataGridView.Rows[e.RowIndex].Cells[4].Value;
+            orderedQuantity = (int)salesDataGridView.Rows[e.RowIndex].Cells[4].Value;
             ProductService productService = new ProductService();
             availableQuantity = productService.GetProductQuantity((int)salesDataGridView.Rows[e.RowIndex].Cells[2].Value);
         }
@@ -113,7 +119,7 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
         private void removeProductbutton_Click(object sender, EventArgs e)
         {
             SaleService saleService = new SaleService();
-            int result = saleService.RemoveOrder(orderId,productId,availableQuantity, removableQuantity);
+            int result = saleService.RemoveOrder(orderId,productId,availableQuantity, orderedQuantity);
             if (result > 0)
             {
                 MessageBox.Show("Order removed successfully","Remove order");
@@ -133,7 +139,7 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
         private void addNewCustomer_Click(object sender, EventArgs e)
         {
             this.Hide();
-            CustomerAdd customerAdd = new CustomerAdd();
+            IncertCustomer customerAdd = new IncertCustomer();
             customerAdd.Show();
 
         }
@@ -142,5 +148,16 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             CustomerService customerService = new CustomerService();
             customersDataGridView.DataSource = customerService.GetCustomerListForSearch(customerSearchTextBox.Text);
         }
+
+        private void OrdersByDateButton_Click(object sender, EventArgs e)
+        {
+            SaleService saleService = new SaleService();
+            salesDataGridView.DataSource = saleService.GetAllSalesListByDateAndId(fromDateTimePicker.Value.ToString("MM/dd/yyyy"), tillDateTimePicker.Value.ToString("MM/dd/yyyy"), customerId);
+            totalOrderedAmount.Text = saleService.TotalOrderedAmountByDate(customerId, fromDateTimePicker.Value.ToString("MM/dd/yyyy"), tillDateTimePicker.Value.ToString("MM/dd/yyyy"));
+            lastOrderedLebel.Text = saleService.LastOrderedDateByDate(customerId, fromDateTimePicker.Value.ToString("MM/dd/yyyy"), tillDateTimePicker.Value.ToString("MM/dd/yyyy"));
+            orderCount.Text = saleService.OrderCountByDate(customerId, fromDateTimePicker.Value.ToString("MM/dd/yyyy"), tillDateTimePicker.Value.ToString("MM/dd/yyyy"));
+        }
+
+        
     }
 }

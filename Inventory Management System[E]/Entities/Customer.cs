@@ -10,7 +10,7 @@ namespace Sales_and_Inventory_Management_System.Entities
     {
         public int CustomerId { get; set; }
         public string CustomerName { get; set; }
-        public double PhoneNo { get; set; }
+        public string PhoneNo { get; set; }
 
     }
 }
