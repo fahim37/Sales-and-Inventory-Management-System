@@ -48,6 +48,8 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.phoneNoTextBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.totalDaysLabel = new System.Windows.Forms.Label();
             this.OrdersByDateButton = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -72,7 +74,7 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             // 
             this.customerSearchTextBox.Location = new System.Drawing.Point(163, 15);
             this.customerSearchTextBox.Name = "customerSearchTextBox";
-            this.customerSearchTextBox.Size = new System.Drawing.Size(174, 20);
+            this.customerSearchTextBox.Size = new System.Drawing.Size(174, 22);
             this.customerSearchTextBox.TabIndex = 1;
             this.customerSearchTextBox.TextChanged += new System.EventHandler(this.customerSearchTextBox_TextChanged);
             // 
@@ -115,8 +117,13 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.customerLoadDataGridView);
+            this.groupBox1.Controls.Add(this.lastOrderedLebel);
+            this.groupBox1.Controls.Add(this.customerNameLabel);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.customerSearchTextBox);
+            this.groupBox1.Controls.Add(this.orderCount);
+            this.groupBox1.Controls.Add(this.totalOrderedAmount);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(26, 50);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(812, 344);
@@ -137,17 +144,18 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             // orderCount
             // 
             this.orderCount.AutoSize = true;
-            this.orderCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderCount.Location = new System.Drawing.Point(628, 210);
+            this.orderCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderCount.ForeColor = System.Drawing.Color.Indigo;
+            this.orderCount.Location = new System.Drawing.Point(608, 157);
             this.orderCount.Name = "orderCount";
-            this.orderCount.Size = new System.Drawing.Size(0, 16);
+            this.orderCount.Size = new System.Drawing.Size(0, 20);
             this.orderCount.TabIndex = 28;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(532, 277);
+            this.label6.Location = new System.Drawing.Point(533, 277);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(106, 16);
             this.label6.TabIndex = 30;
@@ -156,10 +164,11 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             // totalOrderedAmount
             // 
             this.totalOrderedAmount.AutoSize = true;
-            this.totalOrderedAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalOrderedAmount.Location = new System.Drawing.Point(644, 277);
+            this.totalOrderedAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalOrderedAmount.ForeColor = System.Drawing.Color.Indigo;
+            this.totalOrderedAmount.Location = new System.Drawing.Point(616, 224);
             this.totalOrderedAmount.Name = "totalOrderedAmount";
-            this.totalOrderedAmount.Size = new System.Drawing.Size(0, 16);
+            this.totalOrderedAmount.Size = new System.Drawing.Size(0, 20);
             this.totalOrderedAmount.TabIndex = 29;
             // 
             // customerNameTextBox
@@ -264,25 +273,47 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.label13);
+            this.groupBox4.Controls.Add(this.totalDaysLabel);
             this.groupBox4.Controls.Add(this.OrdersByDateButton);
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.tillDateTimePicker);
             this.groupBox4.Controls.Add(this.fromDateTimePicker);
-            this.groupBox4.Location = new System.Drawing.Point(76, 16);
+            this.groupBox4.Location = new System.Drawing.Point(51, 16);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(805, 67);
+            this.groupBox4.Size = new System.Drawing.Size(900, 78);
             this.groupBox4.TabIndex = 30;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Customers Orders By date";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(777, 20);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(94, 20);
+            this.label13.TabIndex = 43;
+            this.label13.Text = "Total Days";
+            // 
+            // totalDaysLabel
+            // 
+            this.totalDaysLabel.AutoSize = true;
+            this.totalDaysLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalDaysLabel.ForeColor = System.Drawing.Color.Indigo;
+            this.totalDaysLabel.Location = new System.Drawing.Point(808, 42);
+            this.totalDaysLabel.Name = "totalDaysLabel";
+            this.totalDaysLabel.Size = new System.Drawing.Size(0, 25);
+            this.totalDaysLabel.TabIndex = 42;
             // 
             // OrdersByDateButton
             // 
             this.OrdersByDateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OrdersByDateButton.ForeColor = System.Drawing.Color.DarkGreen;
-            this.OrdersByDateButton.Location = new System.Drawing.Point(592, 17);
+            this.OrdersByDateButton.Location = new System.Drawing.Point(593, 19);
             this.OrdersByDateButton.Name = "OrdersByDateButton";
-            this.OrdersByDateButton.Size = new System.Drawing.Size(157, 34);
+            this.OrdersByDateButton.Size = new System.Drawing.Size(157, 44);
             this.OrdersByDateButton.TabIndex = 37;
             this.OrdersByDateButton.Text = "Find";
             this.OrdersByDateButton.UseVisualStyleBackColor = true;
@@ -292,7 +323,7 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(308, 27);
+            this.label10.Location = new System.Drawing.Point(320, 29);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(38, 16);
             this.label10.TabIndex = 39;
@@ -302,7 +333,7 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(20, 23);
+            this.label5.Location = new System.Drawing.Point(20, 29);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 16);
             this.label5.TabIndex = 38;
@@ -310,17 +341,19 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             // 
             // tillDateTimePicker
             // 
-            this.tillDateTimePicker.Location = new System.Drawing.Point(365, 23);
+            this.tillDateTimePicker.Location = new System.Drawing.Point(364, 29);
             this.tillDateTimePicker.Name = "tillDateTimePicker";
             this.tillDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.tillDateTimePicker.TabIndex = 1;
+            this.tillDateTimePicker.CloseUp += new System.EventHandler(this.tillDateTimePicker_CloseUp);
             // 
             // fromDateTimePicker
             // 
-            this.fromDateTimePicker.Location = new System.Drawing.Point(77, 23);
+            this.fromDateTimePicker.Location = new System.Drawing.Point(77, 29);
             this.fromDateTimePicker.Name = "fromDateTimePicker";
             this.fromDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.fromDateTimePicker.TabIndex = 0;
+            this.fromDateTimePicker.CloseUp += new System.EventHandler(this.fromDateTimePicker_CloseUp);
             // 
             // label9
             // 
@@ -356,7 +389,8 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             // 
             this.lastOrderedLebel.AutoSize = true;
             this.lastOrderedLebel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastOrderedLebel.Location = new System.Drawing.Point(644, 345);
+            this.lastOrderedLebel.ForeColor = System.Drawing.Color.Indigo;
+            this.lastOrderedLebel.Location = new System.Drawing.Point(617, 296);
             this.lastOrderedLebel.Name = "lastOrderedLebel";
             this.lastOrderedLebel.Size = new System.Drawing.Size(0, 16);
             this.lastOrderedLebel.TabIndex = 36;
@@ -384,10 +418,11 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             // customerNameLabel
             // 
             this.customerNameLabel.AutoSize = true;
-            this.customerNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerNameLabel.Location = new System.Drawing.Point(595, 139);
+            this.customerNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerNameLabel.ForeColor = System.Drawing.Color.Indigo;
+            this.customerNameLabel.Location = new System.Drawing.Point(569, 86);
             this.customerNameLabel.Name = "customerNameLabel";
-            this.customerNameLabel.Size = new System.Drawing.Size(0, 16);
+            this.customerNameLabel.Size = new System.Drawing.Size(0, 20);
             this.customerNameLabel.TabIndex = 38;
             // 
             // CustomerManagement
@@ -397,15 +432,11 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1323, 866);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.customerNameLabel);
-            this.Controls.Add(this.lastOrderedLebel);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.totalOrderedAmount);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.orderCount);
             this.Controls.Add(this.groupBox1);
             this.Name = "CustomerManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -459,5 +490,7 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
         private System.Windows.Forms.Button OrdersByDateButton;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label totalDaysLabel;
     }
 }

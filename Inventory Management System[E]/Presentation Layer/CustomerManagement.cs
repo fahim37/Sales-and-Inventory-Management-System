@@ -168,6 +168,40 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             orderCount.Text = saleService.OrderCountByDate(customerId, fromDateTimePicker.Value.ToString("MM/dd/yyyy"), tillDateTimePicker.Value.ToString("MM/dd/yyyy"));
         }
 
-        
+        private void tillDateTimePicker_CloseUp(object sender, EventArgs e)
+        {
+            DateTime fromDate = Convert.ToDateTime(fromDateTimePicker.Text);
+            DateTime tillDate = Convert.ToDateTime(tillDateTimePicker.Text);
+            if (fromDate <= tillDate)
+            {
+                TimeSpan ts = tillDate.Subtract(fromDate);
+                string days = Convert.ToString(ts.Days);
+                totalDaysLabel.Text = days;
+            }
+            else
+            {
+                MessageBox.Show("Till Date Should be greater than From Date", "Date");
+                tillDateTimePicker.Text = Convert.ToString(fromDate);
+                totalDaysLabel.Text = string.Empty;
+            }
+        }
+
+        private void fromDateTimePicker_CloseUp(object sender, EventArgs e)
+        {
+            DateTime fromDate = Convert.ToDateTime(fromDateTimePicker.Text);
+            DateTime tillDate = Convert.ToDateTime(tillDateTimePicker.Text);
+            if (fromDate <= tillDate)
+            {
+                TimeSpan ts = tillDate.Subtract(fromDate);
+                string days = Convert.ToString(ts.Days);
+                totalDaysLabel.Text = days;
+            }
+            else
+            {
+                MessageBox.Show("From Date Should be Lesser than Till Date", "Date");
+                fromDateTimePicker.Text = Convert.ToString(tillDate);
+                totalDaysLabel.Text = string.Empty;
+            }
+        }
     }
 }

@@ -15,6 +15,10 @@ namespace Sales_and_Inventory_Management_System.Business_Logic_Layer
         {
             this.saleDataAccess = new SaleDataAccess();
         }
+        public List<Sale> GetAllSalesList()
+        {
+            return this.saleDataAccess.GetAllSalesList();
+        }
         public List<Sale> GetAllSalesListByDate(string from, string to)
         {
             return this.saleDataAccess.GetAllSalesListByDate(from, to);
@@ -37,7 +41,6 @@ namespace Sales_and_Inventory_Management_System.Business_Logic_Layer
         }
         
         
-
         public int CreateSale(string customerName, int customerId, string productName, int productId, string salesDate, int quantity, double unitPrice, int availableQuantity)
         {
             int newQuantity = 0;
@@ -97,6 +100,30 @@ namespace Sales_and_Inventory_Management_System.Business_Logic_Layer
         public void UpdateCustomerName(string customerName, int customerId)
         {
             saleDataAccess.UpdateCustomerName(customerName, customerId);
+        }
+        public string TotalSalesCount()
+        {
+            return saleDataAccess.TotalSalesCount();
+        }
+        public string TotalSalesAmount()
+        {
+            return saleDataAccess.TotalSalesAmount();
+        }
+        public string LastSalesDate()
+        {
+            return saleDataAccess.LastSalesDate();
+        }
+        public string TotalSalesByDate(string from, string to)
+        {
+            return saleDataAccess.TotalSalesByDate(from, to);
+        }
+        public string LastSalesDateBydate(string from, string to)
+        {
+            return saleDataAccess.LastSalesDateBydate(from, to);
+        }
+        public string SalesCountBydate(string from, string to)
+        {
+            return saleDataAccess.SalesCountBydate(from, to);
         }
     }
 }

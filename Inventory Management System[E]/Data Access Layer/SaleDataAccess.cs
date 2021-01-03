@@ -21,6 +21,28 @@ namespace Sales_and_Inventory_Management_System.Data_Access_Layer
             string sql = "INSERT INTO SALES (CustomerName,CustomerId,ProductName,ProductId,SalesDate,Quantity,UnitPrice,TotalPrice) VALUES('" + sale.CustomerName + "'," + sale.CustomerId + ",'" + sale.ProductName + "'," + sale.ProductId + ",'" + sale.SalesDate + "'," + sale.Quantity + "," + sale.UnitPrice + ","+sale.TotalPrice+")";
             return this.dataAccess.ExecuteQuery(sql);
         }
+        public List<Sale> GetAllSalesList()
+        {
+            string sql = "SELECT * FROM Sales";
+            this.dataAccess = new DataAccess();
+            SqlDataReader reader = this.dataAccess.GetData(sql);
+            List<Sale> sales = new List<Sale>();
+            while (reader.Read())
+            {
+                Sale sale = new Sale();
+                sale.OrderId = (int)reader["OrderId"];
+                sale.CustomerName = reader["CustomerName"].ToString();
+                sale.CustomerId = (int)reader["CustomerId"];
+                sale.ProductName = reader["ProductName"].ToString();
+                sale.ProductId = (int)reader["ProductId"];
+                sale.SalesDate = reader["SalesDate"].ToString();
+                sale.Quantity = (int)reader["Quantity"];
+                sale.UnitPrice = Convert.ToDouble(reader["UnitPrice"]);
+                sale.TotalPrice = Convert.ToDouble(reader["TotalPrice"]);
+                sales.Add(sale);
+            }
+            return sales;
+        }
         public List<Sale> GetAllSalesListByDate(string from, string to)
         {
             string sql = "SELECT * FROM Sales WHERE SalesDate BETWEEN '" + from + "' AND '" + to + "'";
@@ -30,6 +52,7 @@ namespace Sales_and_Inventory_Management_System.Data_Access_Layer
             while (reader.Read())
             {
                 Sale sale = new Sale();
+                sale.OrderId = (int)reader["OrderId"];
                 sale.CustomerName = reader["CustomerName"].ToString();
                 sale.CustomerId = (int)reader["CustomerId"];
                 sale.ProductName = reader["ProductName"].ToString();
@@ -186,7 +209,48 @@ namespace Sales_and_Inventory_Management_System.Data_Access_Layer
             int result = this.dataAccess.ExecuteQuery(sql);
             return result;
         }
-        
+        public string TotalSalesCount()
+        {
+            string sql = "SELECT COUNT (ProductId) FROM Sales";
+            this.dataAccess = new DataAccess();
+            string result = this.dataAccess.ExecuteScalar(sql);
+            return result;
+        }
+        public string TotalSalesAmount()
+        {
+            string sql = "SELECT SUM (TotalPrice) FROM Sales";
+            this.dataAccess = new DataAccess();
+            string result = this.dataAccess.ExecuteScalar(sql);
+            return result;
+        }
+        public string LastSalesDate()
+        {
+            string sql = "SELECT MAX (SalesDate) FROM Sales";
+            this.dataAccess = new DataAccess();
+            string result = this.dataAccess.ExecuteScalar(sql);
+            return result;
+        }
+        public string TotalSalesByDate(string from, string to)
+        {
+            string sql = "SELECT SUM (TotalPrice) FROM Sales WHERE SalesDate BETWEEN '" + from + "' AND '" + to + "'";
+            this.dataAccess = new DataAccess();
+            string result = this.dataAccess.ExecuteScalar(sql);
+            return result;
+        }
+        public string LastSalesDateBydate(string from, string to)
+        {
+            string sql = "SELECT MAX (SalesDate) FROM Sales WHERE SalesDate BETWEEN '" + from + "' AND '" + to + "'";
+            this.dataAccess = new DataAccess();
+            string result = this.dataAccess.ExecuteScalar(sql);
+            return result;
+        }
+        public string SalesCountBydate(string from, string to)
+        {
+            string sql = "SELECT COUNT (ProductId) FROM Sales WHERE SalesDate BETWEEN '" + from + "' AND '" + to + "'";
+            this.dataAccess = new DataAccess();
+            string result = this.dataAccess.ExecuteScalar(sql);
+            return result;
+        }
     }
 }
 

@@ -39,7 +39,18 @@ namespace Sales_and_Inventory_Management_System.Data_Access_Layer
             string sql = "INSERT INTO Products(ProductName,Price,Quantity,CategoryId) VALUES('"+product.ProductName+"',"+product.Price+","+product.Quantity+","+product.CategoryId+")";
             return this.dataAccess.ExecuteQuery(sql);
         }
-
+        public int UpdateProduct(Product product)
+        {
+            string sql = "UPDATE Products SET ProductName='" + product.ProductName + "',Price=" + product.Price + ",Quantity=" + product.Quantity + ",CategoryId=" + product.CategoryId + " WHERE ProductId=" + product.ProductId;
+            int result = this.dataAccess.ExecuteQuery(sql);
+            return result;
+        }
+        public int DeleteProduct(int id)
+        {
+            string sql = "DELETE FROM Products WHERE ProductId=" + id;
+            int result = this.dataAccess.ExecuteQuery(sql);
+            return result;
+        }
         public int GetCategoryId(string categoryName)
         {
             string sql = "SELECT * FROM Categories WHERE CategoryName='"+categoryName+"'";

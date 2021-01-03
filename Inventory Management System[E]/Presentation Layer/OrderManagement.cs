@@ -88,7 +88,13 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
 
         private void PlaceOrderButton_Click(object sender, EventArgs e)
         {
+            
             SaleService saleService = new SaleService();
+            if (quantityTextBox.Text == "")
+            {
+                MessageBox.Show("Plaese Mention A Quantity", "Quantity");
+            }
+            
             int result = saleService.CreateSale(customerNameTextBox.Text, customerId, productNameTextBox.Text, productId,saleDateTimePicker.Value.ToString("MM/dd/yyyy"), Convert.ToInt32(quantityTextBox.Text) ,unitPrice, availableQuantity);
             if(result>0)
             {
@@ -152,12 +158,58 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
         private void OrdersByDateButton_Click(object sender, EventArgs e)
         {
             SaleService saleService = new SaleService();
-            salesDataGridView.DataSource = saleService.GetAllSalesListByDateAndId(fromDateTimePicker.Value.ToString("MM/dd/yyyy"), tillDateTimePicker.Value.ToString("MM/dd/yyyy"), customerId);
+            salesDataGridView.DataSource = saleService.GetCustomerOrderByDateAndId(fromDateTimePicker.Value.ToString("MM/dd/yyyy"), tillDateTimePicker.Value.ToString("MM/dd/yyyy"), customerId);
             totalOrderedAmount.Text = saleService.TotalOrderedAmountByDate(customerId, fromDateTimePicker.Value.ToString("MM/dd/yyyy"), tillDateTimePicker.Value.ToString("MM/dd/yyyy"));
             lastOrderedLebel.Text = saleService.LastOrderedDateByDate(customerId, fromDateTimePicker.Value.ToString("MM/dd/yyyy"), tillDateTimePicker.Value.ToString("MM/dd/yyyy"));
             orderCount.Text = saleService.OrderCountByDate(customerId, fromDateTimePicker.Value.ToString("MM/dd/yyyy"), tillDateTimePicker.Value.ToString("MM/dd/yyyy"));
         }
 
-        
+        private void saleDateTimePicker_CloseUp(object sender, EventArgs e)
+        {
+            DateTime saleDate = Convert.ToDateTime(saleDateTimePicker.Text);
+            DateTime today = DateTime.Today;
+            if (saleDate > today)
+            {
+                MessageBox.Show("Sale Date Cant be greater than Today's Date", "Date");
+                saleDateTimePicker.Text = Convert.ToString(today);
+            }
+        }
+
+        private void tillDateTimePicker_CloseUp(object sender, EventArgs e)
+        {
+            DateTime fromDate = Convert.ToDateTime(fromDateTimePicker.Text);
+            DateTime tillDate = Convert.ToDateTime(tillDateTimePicker.Text);
+            if(fromDate <= tillDate)
+            {
+                TimeSpan ts = tillDate.Subtract(fromDate);
+                string days = Convert.ToString(ts.Days);
+                totalDaysLabel.Text = days;
+            }
+            else
+            {
+                MessageBox.Show("Till Date Should be greater than From Date", "Date");
+                tillDateTimePicker.Text = Convert.ToString(fromDate);
+                totalDaysLabel.Text = string.Empty;
+            }
+        }
+
+        private void fromDateTimePicker_CloseUp(object sender, EventArgs e)
+        {
+            DateTime fromDate = Convert.ToDateTime(fromDateTimePicker.Text);
+            DateTime tillDate = Convert.ToDateTime(tillDateTimePicker.Text);
+            if (fromDate <= tillDate)
+            {
+                TimeSpan ts = tillDate.Subtract(fromDate);
+                string days = Convert.ToString(ts.Days);
+                totalDaysLabel.Text = days;
+            }
+            else
+            {
+                MessageBox.Show("From Date Should be Lesser than Till Date", "Date");
+                fromDateTimePicker.Text = Convert.ToString(tillDate);
+                totalDaysLabel.Text = string.Empty;
+            }
+        }
+
     }
 }

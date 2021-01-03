@@ -17,7 +17,7 @@ namespace Sales_and_Inventory_Management_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new CustomerManagement());
+            Application.Run(new SalesRecord());
         }
     }
 }

@@ -20,7 +20,10 @@ namespace Sales_and_Inventory_Management_System.Business_Logic_Layer
         {
             return this.categoryDataAccess.GetAllCategories();
         }
-
+        public string GetCategoryName(int id)
+        {
+            return this.categoryDataAccess.GetCategoryName(id);
+        }
         public int AddNewCategory(string categoryName)
         {
             Category category = new Category()
