@@ -41,9 +41,9 @@ namespace Sales_and_Inventory_Management_System.Business_Logic_Layer
             };
             return this.categoryDataAccess.UpdateCategory(category);
         }
-        public int DeleteCategory(string categoryId)
+        public int DeleteCategory(int categoryId)
         {
-            return this.categoryDataAccess.DeleteCategory(Convert.ToInt32(categoryId));
+            return this.categoryDataAccess.DeleteCategory(categoryId);
         }
         public List<string> GetCategoryNameList()
         {

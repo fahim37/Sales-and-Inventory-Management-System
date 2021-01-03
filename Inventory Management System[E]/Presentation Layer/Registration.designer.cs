@@ -1,4 +1,4 @@
-﻿namespace Inventory_Management_System_E_.Presentation_Layer
+﻿namespace Sales_and_Inventory_Management_System.Presentation_Layer
 {
     partial class Registration
     {

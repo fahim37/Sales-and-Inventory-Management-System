@@ -1,4 +1,4 @@
-﻿namespace Inventory_Management_System_E_.Presentation_Layer
+﻿namespace Sales_and_Inventory_Management_System.Presentation_Layer
 {
     partial class Login
     {
@@ -47,8 +47,8 @@
             this.groupBox1.Controls.Add(this.usernameTextBox);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(222, 189);
+            this.groupBox1.Font = new System.Drawing.Font("Swis721 Blk BT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(293, 201);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(635, 301);
             this.groupBox1.TabIndex = 0;
@@ -107,7 +107,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(316, 510);
+            this.label3.Location = new System.Drawing.Point(387, 522);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(164, 18);
             this.label3.TabIndex = 2;
@@ -117,7 +117,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(560, 510);
+            this.label5.Location = new System.Drawing.Point(631, 522);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(150, 18);
             this.label5.TabIndex = 4;
@@ -127,7 +127,7 @@
             // 
             this.RestrationLinkLabel.AutoSize = true;
             this.RestrationLinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RestrationLinkLabel.Location = new System.Drawing.Point(473, 510);
+            this.RestrationLinkLabel.Location = new System.Drawing.Point(544, 522);
             this.RestrationLinkLabel.Name = "RestrationLinkLabel";
             this.RestrationLinkLabel.Size = new System.Drawing.Size(90, 18);
             this.RestrationLinkLabel.TabIndex = 5;
