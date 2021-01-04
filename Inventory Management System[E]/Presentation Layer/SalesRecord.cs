@@ -13,9 +13,11 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
 {
     public partial class SalesRecord : Form
     {
-        public SalesRecord()
+        string username;
+        public SalesRecord(string username)
         {
             InitializeComponent();
+            this.username = username;
         }
 
         private void SalesRecord_FormClosing(object sender, FormClosingEventArgs e)
@@ -84,6 +86,23 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             orderCount.Text = saleService.TotalSalesCount();
             totalOrderedAmount.Text = saleService.TotalSalesAmount();
             lastOrderedLebel.Text = saleService.LastSalesDate();
+        }
+
+        private void HomeButton_Click(object sender, EventArgs e)
+        {
+            UserService userService = new UserService();
+            if (userService.GetUserType(username) == "Admin")
+            {
+                HomeForAdmin homeForAdmin = new HomeForAdmin(username);
+                homeForAdmin.Show();
+                this.Hide();
+            }
+            else
+            {
+                HomeForUser homeForUser = new HomeForUser(username);
+                homeForUser.Show();
+                this.Hide();
+            }
         }
     }
 }

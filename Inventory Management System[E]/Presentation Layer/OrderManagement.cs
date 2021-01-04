@@ -20,9 +20,11 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
         int availableQuantity=0;
         //int removableQuantity = 0;
         int orderedQuantity = 0;
-        public OrderManagement()
+        string username;
+        public OrderManagement(string username)
         {
             InitializeComponent();
+            this.username = username;
             placeOrderButton.Click += this.RefreshGridview;
             placeOrderButton.Click += this.ClearFields;
             removeProductbutton.Click += this.RefreshGridview;
@@ -145,7 +147,7 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
         private void addNewCustomer_Click(object sender, EventArgs e)
         {
             this.Hide();
-            IncertCustomer customerAdd = new IncertCustomer();
+            IncertCustomer customerAdd = new IncertCustomer(username);
             customerAdd.Show();
 
         }
@@ -211,5 +213,21 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             }
         }
 
+        private void BackToHomeButton_Click(object sender, EventArgs e)
+        {
+            UserService userService = new UserService();
+            if (userService.GetUserType(username) == "Admin")
+            {
+                HomeForAdmin homeForAdmin = new HomeForAdmin(username);
+                homeForAdmin.Show();
+                this.Hide();
+            }
+            else
+            {
+                HomeForUser homeForUser = new HomeForUser(username);
+                homeForUser.Show();
+                this.Hide();
+            }
+        }
     }
 }

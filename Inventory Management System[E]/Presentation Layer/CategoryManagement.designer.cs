@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CategoryManagement));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.deleteCategoryButton = new System.Windows.Forms.Button();
             this.updateCategoryButton = new System.Windows.Forms.Button();
@@ -41,7 +42,7 @@
             this.refreshButton = new System.Windows.Forms.Button();
             this.categoryWiseProductcomboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.backToHomeButton = new System.Windows.Forms.Button();
+            this.backToHomeBuktton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loadCategoryDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryWiseProductDataGridView)).BeginInit();
@@ -56,7 +57,7 @@
             this.groupBox1.Controls.Add(this.categoryNameTextBox);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(78, 131);
+            this.groupBox1.Location = new System.Drawing.Point(12, 69);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(638, 167);
             this.groupBox1.TabIndex = 0;
@@ -65,9 +66,9 @@
             // 
             // deleteCategoryButton
             // 
-            this.deleteCategoryButton.Location = new System.Drawing.Point(376, 116);
+            this.deleteCategoryButton.Location = new System.Drawing.Point(402, 95);
             this.deleteCategoryButton.Name = "deleteCategoryButton";
-            this.deleteCategoryButton.Size = new System.Drawing.Size(134, 29);
+            this.deleteCategoryButton.Size = new System.Drawing.Size(134, 40);
             this.deleteCategoryButton.TabIndex = 2;
             this.deleteCategoryButton.Text = "Delete Category";
             this.deleteCategoryButton.UseVisualStyleBackColor = true;
@@ -75,9 +76,9 @@
             // 
             // updateCategoryButton
             // 
-            this.updateCategoryButton.Location = new System.Drawing.Point(225, 116);
+            this.updateCategoryButton.Location = new System.Drawing.Point(251, 95);
             this.updateCategoryButton.Name = "updateCategoryButton";
-            this.updateCategoryButton.Size = new System.Drawing.Size(135, 29);
+            this.updateCategoryButton.Size = new System.Drawing.Size(135, 40);
             this.updateCategoryButton.TabIndex = 2;
             this.updateCategoryButton.Text = "Update Category";
             this.updateCategoryButton.UseVisualStyleBackColor = true;
@@ -85,9 +86,9 @@
             // 
             // addCategoryButton
             // 
-            this.addCategoryButton.Location = new System.Drawing.Point(80, 116);
+            this.addCategoryButton.Location = new System.Drawing.Point(106, 95);
             this.addCategoryButton.Name = "addCategoryButton";
-            this.addCategoryButton.Size = new System.Drawing.Size(124, 29);
+            this.addCategoryButton.Size = new System.Drawing.Size(124, 40);
             this.addCategoryButton.TabIndex = 2;
             this.addCategoryButton.Text = "Add Category";
             this.addCategoryButton.UseVisualStyleBackColor = true;
@@ -95,15 +96,15 @@
             // 
             // categoryNameTextBox
             // 
-            this.categoryNameTextBox.Location = new System.Drawing.Point(177, 50);
+            this.categoryNameTextBox.Location = new System.Drawing.Point(203, 40);
             this.categoryNameTextBox.Name = "categoryNameTextBox";
-            this.categoryNameTextBox.Size = new System.Drawing.Size(158, 26);
+            this.categoryNameTextBox.Size = new System.Drawing.Size(183, 26);
             this.categoryNameTextBox.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(51, 53);
+            this.label1.Location = new System.Drawing.Point(77, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 19);
             this.label1.TabIndex = 0;
@@ -112,9 +113,9 @@
             // loadCategoryDataGridView
             // 
             this.loadCategoryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.loadCategoryDataGridView.Location = new System.Drawing.Point(821, 184);
+            this.loadCategoryDataGridView.Location = new System.Drawing.Point(689, 217);
             this.loadCategoryDataGridView.Name = "loadCategoryDataGridView";
-            this.loadCategoryDataGridView.Size = new System.Drawing.Size(246, 263);
+            this.loadCategoryDataGridView.Size = new System.Drawing.Size(333, 273);
             this.loadCategoryDataGridView.TabIndex = 5;
             this.loadCategoryDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.loadCategoryDataGridView_CellClick);
             // 
@@ -122,7 +123,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(887, 131);
+            this.label4.Location = new System.Drawing.Point(790, 172);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(124, 22);
             this.label4.TabIndex = 2;
@@ -131,9 +132,9 @@
             // categoryWiseProductDataGridView
             // 
             this.categoryWiseProductDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.categoryWiseProductDataGridView.Location = new System.Drawing.Point(42, 103);
+            this.categoryWiseProductDataGridView.Location = new System.Drawing.Point(0, 103);
             this.categoryWiseProductDataGridView.Name = "categoryWiseProductDataGridView";
-            this.categoryWiseProductDataGridView.Size = new System.Drawing.Size(549, 229);
+            this.categoryWiseProductDataGridView.Size = new System.Drawing.Size(638, 307);
             this.categoryWiseProductDataGridView.TabIndex = 6;
             // 
             // groupBox2
@@ -143,15 +144,16 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.categoryWiseProductDataGridView);
             this.groupBox2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(78, 338);
+            this.groupBox2.Location = new System.Drawing.Point(12, 258);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(638, 357);
+            this.groupBox2.Size = new System.Drawing.Size(638, 410);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search Product List by Category";
             // 
             // refreshButton
             // 
+            this.refreshButton.Image = ((System.Drawing.Image)(resources.GetObject("refreshButton.Image")));
             this.refreshButton.Location = new System.Drawing.Point(487, 47);
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(104, 29);
@@ -178,24 +180,29 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Category Name";
             // 
-            // backToHomeButton
+            // backToHomeBuktton
             // 
-            this.backToHomeButton.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backToHomeButton.Location = new System.Drawing.Point(78, 52);
-            this.backToHomeButton.Name = "backToHomeButton";
-            this.backToHomeButton.Size = new System.Drawing.Size(115, 29);
-            this.backToHomeButton.TabIndex = 8;
-            this.backToHomeButton.Text = "Home";
-            this.backToHomeButton.UseVisualStyleBackColor = true;
-            this.backToHomeButton.Click += new System.EventHandler(this.backToHomeButton_Click);
+            this.backToHomeBuktton.FlatAppearance.BorderSize = 0;
+            this.backToHomeBuktton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backToHomeBuktton.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backToHomeBuktton.Image = ((System.Drawing.Image)(resources.GetObject("backToHomeBuktton.Image")));
+            this.backToHomeBuktton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.backToHomeBuktton.Location = new System.Drawing.Point(12, 12);
+            this.backToHomeBuktton.Name = "backToHomeBuktton";
+            this.backToHomeBuktton.Size = new System.Drawing.Size(98, 41);
+            this.backToHomeBuktton.TabIndex = 8;
+            this.backToHomeBuktton.Text = "Home";
+            this.backToHomeBuktton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.backToHomeBuktton.UseVisualStyleBackColor = true;
+            this.backToHomeBuktton.Click += new System.EventHandler(this.backToHomeButton_Click);
             // 
             // CategoryManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1149, 747);
-            this.Controls.Add(this.backToHomeButton);
+            this.ClientSize = new System.Drawing.Size(1058, 692);
+            this.Controls.Add(this.backToHomeBuktton);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.loadCategoryDataGridView);
@@ -231,6 +238,6 @@
         private System.Windows.Forms.ComboBox categoryWiseProductcomboBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button refreshButton;
-        private System.Windows.Forms.Button backToHomeButton;
+        private System.Windows.Forms.Button backToHomeBuktton;
     }
 }

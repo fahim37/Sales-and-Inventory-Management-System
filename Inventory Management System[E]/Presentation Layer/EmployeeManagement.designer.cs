@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeManagement));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,7 +49,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.userTypeComboBox = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.BackToHomeButton = new System.Windows.Forms.Button();
+            this.backToHomeBuktton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.loadListOfUsersGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -107,15 +108,16 @@
             // 
             this.dateOfBirthDateTimePicker.Location = new System.Drawing.Point(152, 253);
             this.dateOfBirthDateTimePicker.Name = "dateOfBirthDateTimePicker";
-            this.dateOfBirthDateTimePicker.Size = new System.Drawing.Size(153, 26);
+            this.dateOfBirthDateTimePicker.Size = new System.Drawing.Size(293, 26);
             this.dateOfBirthDateTimePicker.TabIndex = 6;
+            this.dateOfBirthDateTimePicker.CloseUp += new System.EventHandler(this.dateOfBirthDateTimePicker_CloseUp);
             // 
             // emailTextBox
             // 
             this.emailTextBox.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailTextBox.Location = new System.Drawing.Point(152, 204);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(153, 26);
+            this.emailTextBox.Size = new System.Drawing.Size(293, 26);
             this.emailTextBox.TabIndex = 7;
             // 
             // userNameTextBox
@@ -123,7 +125,7 @@
             this.userNameTextBox.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userNameTextBox.Location = new System.Drawing.Point(152, 95);
             this.userNameTextBox.Name = "userNameTextBox";
-            this.userNameTextBox.Size = new System.Drawing.Size(153, 26);
+            this.userNameTextBox.Size = new System.Drawing.Size(293, 26);
             this.userNameTextBox.TabIndex = 8;
             // 
             // GenderComboBox
@@ -134,7 +136,7 @@
             "Female"});
             this.GenderComboBox.Location = new System.Drawing.Point(152, 306);
             this.GenderComboBox.Name = "GenderComboBox";
-            this.GenderComboBox.Size = new System.Drawing.Size(124, 27);
+            this.GenderComboBox.Size = new System.Drawing.Size(264, 27);
             this.GenderComboBox.TabIndex = 9;
             // 
             // nameTextBox
@@ -142,18 +144,19 @@
             this.nameTextBox.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameTextBox.Location = new System.Drawing.Point(152, 47);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(153, 26);
+            this.nameTextBox.Size = new System.Drawing.Size(293, 26);
             this.nameTextBox.TabIndex = 11;
             // 
             // loadListOfUsersGridView
             // 
             this.loadListOfUsersGridView.AllowUserToAddRows = false;
             this.loadListOfUsersGridView.AllowUserToDeleteRows = false;
+            this.loadListOfUsersGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.loadListOfUsersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.loadListOfUsersGridView.Location = new System.Drawing.Point(547, 255);
+            this.loadListOfUsersGridView.Location = new System.Drawing.Point(543, 134);
             this.loadListOfUsersGridView.Name = "loadListOfUsersGridView";
             this.loadListOfUsersGridView.ReadOnly = true;
-            this.loadListOfUsersGridView.Size = new System.Drawing.Size(589, 262);
+            this.loadListOfUsersGridView.Size = new System.Drawing.Size(581, 357);
             this.loadListOfUsersGridView.TabIndex = 12;
             this.loadListOfUsersGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.loadListOfUsersGridView_CellClick);
             // 
@@ -161,7 +164,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(781, 195);
+            this.label7.Location = new System.Drawing.Point(773, 83);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(117, 22);
             this.label7.TabIndex = 13;
@@ -170,9 +173,9 @@
             // addUserButton
             // 
             this.addUserButton.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addUserButton.Location = new System.Drawing.Point(65, 413);
+            this.addUserButton.Location = new System.Drawing.Point(94, 413);
             this.addUserButton.Name = "addUserButton";
-            this.addUserButton.Size = new System.Drawing.Size(91, 30);
+            this.addUserButton.Size = new System.Drawing.Size(111, 30);
             this.addUserButton.TabIndex = 14;
             this.addUserButton.Text = "Add User";
             this.addUserButton.UseVisualStyleBackColor = true;
@@ -181,9 +184,9 @@
             // updateUserButton
             // 
             this.updateUserButton.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateUserButton.Location = new System.Drawing.Point(196, 413);
+            this.updateUserButton.Location = new System.Drawing.Point(225, 413);
             this.updateUserButton.Name = "updateUserButton";
-            this.updateUserButton.Size = new System.Drawing.Size(91, 30);
+            this.updateUserButton.Size = new System.Drawing.Size(111, 30);
             this.updateUserButton.TabIndex = 15;
             this.updateUserButton.Text = "Update";
             this.updateUserButton.UseVisualStyleBackColor = true;
@@ -192,9 +195,9 @@
             // deleteUserButton
             // 
             this.deleteUserButton.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteUserButton.Location = new System.Drawing.Point(325, 413);
+            this.deleteUserButton.Location = new System.Drawing.Point(354, 413);
             this.deleteUserButton.Name = "deleteUserButton";
-            this.deleteUserButton.Size = new System.Drawing.Size(91, 30);
+            this.deleteUserButton.Size = new System.Drawing.Size(111, 30);
             this.deleteUserButton.TabIndex = 16;
             this.deleteUserButton.Text = "Delete";
             this.deleteUserButton.UseVisualStyleBackColor = true;
@@ -216,7 +219,7 @@
             this.passwordTextBox.Location = new System.Drawing.Point(152, 149);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '*';
-            this.passwordTextBox.Size = new System.Drawing.Size(153, 26);
+            this.passwordTextBox.Size = new System.Drawing.Size(293, 26);
             this.passwordTextBox.TabIndex = 18;
             // 
             // groupBox1
@@ -239,9 +242,9 @@
             this.groupBox1.Controls.Add(this.emailTextBox);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(59, 170);
+            this.groupBox1.Location = new System.Drawing.Point(12, 59);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(458, 492);
+            this.groupBox1.Size = new System.Drawing.Size(506, 492);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Account\'s all  Operations";
@@ -254,7 +257,7 @@
             "User"});
             this.userTypeComboBox.Location = new System.Drawing.Point(152, 361);
             this.userTypeComboBox.Name = "userTypeComboBox";
-            this.userTypeComboBox.Size = new System.Drawing.Size(124, 27);
+            this.userTypeComboBox.Size = new System.Drawing.Size(264, 27);
             this.userTypeComboBox.TabIndex = 20;
             // 
             // label6
@@ -267,24 +270,29 @@
             this.label6.TabIndex = 19;
             this.label6.Text = "Type";
             // 
-            // BackToHomeButton
+            // backToHomeBuktton
             // 
-            this.BackToHomeButton.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackToHomeButton.Location = new System.Drawing.Point(65, 37);
-            this.BackToHomeButton.Name = "BackToHomeButton";
-            this.BackToHomeButton.Size = new System.Drawing.Size(141, 34);
-            this.BackToHomeButton.TabIndex = 22;
-            this.BackToHomeButton.Text = "Home";
-            this.BackToHomeButton.UseVisualStyleBackColor = true;
-            this.BackToHomeButton.Click += new System.EventHandler(this.BackToHomeButton_Click);
+            this.backToHomeBuktton.FlatAppearance.BorderSize = 0;
+            this.backToHomeBuktton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backToHomeBuktton.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backToHomeBuktton.Image = ((System.Drawing.Image)(resources.GetObject("backToHomeBuktton.Image")));
+            this.backToHomeBuktton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.backToHomeBuktton.Location = new System.Drawing.Point(12, 12);
+            this.backToHomeBuktton.Name = "backToHomeBuktton";
+            this.backToHomeBuktton.Size = new System.Drawing.Size(98, 41);
+            this.backToHomeBuktton.TabIndex = 23;
+            this.backToHomeBuktton.Text = "Home";
+            this.backToHomeBuktton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.backToHomeBuktton.UseVisualStyleBackColor = true;
+            this.backToHomeBuktton.Click += new System.EventHandler(this.backToHomeBuktton_Click);
             // 
             // EmployeeManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1163, 726);
-            this.Controls.Add(this.BackToHomeButton);
+            this.ClientSize = new System.Drawing.Size(1163, 633);
+            this.Controls.Add(this.backToHomeBuktton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.loadListOfUsersGridView);
@@ -321,8 +329,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button BackToHomeButton;
         private System.Windows.Forms.ComboBox userTypeComboBox;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button backToHomeBuktton;
     }
 }

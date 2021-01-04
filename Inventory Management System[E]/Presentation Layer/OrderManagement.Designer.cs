@@ -29,6 +29,7 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderManagement));
             this.productsDataGridView = new System.Windows.Forms.DataGridView();
             this.categoryComboBox = new System.Windows.Forms.ComboBox();
             this.quantityTextBox = new System.Windows.Forms.TextBox();
@@ -53,7 +54,6 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.customersDataGridView = new System.Windows.Forms.DataGridView();
             this.addNewCustomer = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -71,6 +71,7 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.label12 = new System.Windows.Forms.Label();
             this.tillDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.fromDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.BackToHomeButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersDataGridView)).BeginInit();
@@ -267,7 +268,7 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label9.Location = new System.Drawing.Point(5, 22);
+            this.label9.Location = new System.Drawing.Point(6, 29);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(106, 16);
             this.label9.TabIndex = 28;
@@ -275,7 +276,7 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             // 
             // RemoveTextBox
             // 
-            this.RemoveTextBox.Location = new System.Drawing.Point(134, 21);
+            this.RemoveTextBox.Location = new System.Drawing.Point(135, 29);
             this.RemoveTextBox.Name = "RemoveTextBox";
             this.RemoveTextBox.Size = new System.Drawing.Size(191, 22);
             this.RemoveTextBox.TabIndex = 27;
@@ -284,7 +285,7 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             // 
             this.removeProductbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.removeProductbutton.ForeColor = System.Drawing.Color.Red;
-            this.removeProductbutton.Location = new System.Drawing.Point(134, 59);
+            this.removeProductbutton.Location = new System.Drawing.Point(134, 71);
             this.removeProductbutton.Name = "removeProductbutton";
             this.removeProductbutton.Size = new System.Drawing.Size(191, 47);
             this.removeProductbutton.TabIndex = 29;
@@ -319,16 +320,6 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.label11.Size = new System.Drawing.Size(88, 16);
             this.label11.TabIndex = 32;
             this.label11.Text = "Categories ";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(12, 10);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 28);
-            this.button1.TabIndex = 33;
-            this.button1.Text = "Back";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // customersDataGridView
             // 
@@ -368,9 +359,9 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.orderCount);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 44);
+            this.groupBox1.Location = new System.Drawing.Point(12, 57);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(735, 380);
+            this.groupBox1.Size = new System.Drawing.Size(735, 367);
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
             // 
@@ -419,7 +410,7 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(13, 708);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(345, 118);
+            this.groupBox3.Size = new System.Drawing.Size(345, 136);
             this.groupBox3.TabIndex = 38;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Remove Order";
@@ -432,9 +423,9 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.groupBox4.Controls.Add(this.categoryComboBox);
             this.groupBox4.Controls.Add(this.productsDataGridView);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(775, 44);
+            this.groupBox4.Location = new System.Drawing.Point(775, 57);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(602, 380);
+            this.groupBox4.Size = new System.Drawing.Size(602, 367);
             this.groupBox4.TabIndex = 39;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Products";
@@ -536,18 +527,34 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.fromDateTimePicker.TabIndex = 0;
             this.fromDateTimePicker.CloseUp += new System.EventHandler(this.fromDateTimePicker_CloseUp);
             // 
+            // BackToHomeButton
+            // 
+            this.BackToHomeButton.FlatAppearance.BorderSize = 0;
+            this.BackToHomeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BackToHomeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BackToHomeButton.Image = ((System.Drawing.Image)(resources.GetObject("BackToHomeButton.Image")));
+            this.BackToHomeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BackToHomeButton.Location = new System.Drawing.Point(12, 12);
+            this.BackToHomeButton.Name = "BackToHomeButton";
+            this.BackToHomeButton.Size = new System.Drawing.Size(93, 39);
+            this.BackToHomeButton.TabIndex = 41;
+            this.BackToHomeButton.Text = "Home";
+            this.BackToHomeButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BackToHomeButton.UseVisualStyleBackColor = true;
+            this.BackToHomeButton.Click += new System.EventHandler(this.BackToHomeButton_Click);
+            // 
             // OrderManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1389, 891);
+            this.Controls.Add(this.BackToHomeButton);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button1);
             this.ForeColor = System.Drawing.SystemColors.MenuText;
             this.Name = "OrderManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -596,7 +603,6 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
         private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView customersDataGridView;
         private System.Windows.Forms.Button addNewCustomer;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -614,5 +620,6 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
         private System.Windows.Forms.DateTimePicker fromDateTimePicker;
         private System.Windows.Forms.Label totalDaysLabel;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button BackToHomeButton;
     }
 }

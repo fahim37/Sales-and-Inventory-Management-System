@@ -57,12 +57,37 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
         {
             UserService userService = new UserService();
             AdminNamelinkLabel.Text = userService.GetName(username);
+            SaleService saleService = new SaleService();
+            orderCount.Text = saleService.TotalSalesCount();
+            totalOrderedAmount.Text = saleService.TotalSalesAmount();
+            lastOrderedLebel.Text = saleService.LastSalesDate();
         }
 
         private void AdminNamelinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             AdminAccountManagement adminAccountManagement = new AdminAccountManagement(username);
             adminAccountManagement.Show();
+            this.Hide();
+        }
+
+        private void orderManagementButton_Click(object sender, EventArgs e)
+        {
+            OrderManagement orderManagement = new OrderManagement(username);
+            orderManagement.Show();
+            this.Hide();
+        }
+
+        private void customerManagementButton_Click(object sender, EventArgs e)
+        {
+            CustomerManagement customerManagement = new CustomerManagement(username);
+            customerManagement.Show();
+            this.Hide();
+        }
+
+        private void salesRecordButton_Click(object sender, EventArgs e)
+        {
+            SalesRecord salesRecord = new SalesRecord(username);
+            salesRecord.Show();
             this.Hide();
         }
     }

@@ -49,11 +49,30 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
 
         }
 
+        private void dateOfBirthDateTimePicker_CloseUp(object sender, EventArgs e)
+        {
+            DateTime BirthOfDate = Convert.ToDateTime(dateOfBirthDateTimePicker.Text);
+            DateTime today = DateTime.Today;
+            if (BirthOfDate >= today)
+            {
+                MessageBox.Show("Date of Birth Can't be Today's Date or greater than Today's Date", "Selected Date Error");
+                dateOfBirthDateTimePicker.Text = Convert.ToString(today);
+            }
+        }
+
         private void addUserButton_Click(object sender, EventArgs e)
         {
+            DateTime BirthOfDate = Convert.ToDateTime(dateOfBirthDateTimePicker.Text);
+            DateTime today = DateTime.Today;
+
             if (nameTextBox.Text == "" || userNameTextBox.Text == "" || passwordTextBox.Text == "" || emailTextBox.Text == "" || GenderComboBox.Text == "" || userTypeComboBox.Text== "")
             {
                 MessageBox.Show("All boxes have to be filled");
+            }
+            else if (BirthOfDate >= today)
+            {
+                MessageBox.Show("Date of Birth Can't be Today's Date or greater than Today's Date", "Selected Date Error");
+                dateOfBirthDateTimePicker.Text = Convert.ToString(today);
             }
             else
             {
@@ -98,16 +117,27 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
 
         private void updateUserButton_Click(object sender, EventArgs e)
         {
-            UserService userService = new UserService();
-            int result = userService.UpdateUserForAdmin(id,nameTextBox.Text, userNameTextBox.Text, passwordTextBox.Text,emailTextBox.Text,dateOfBirthDateTimePicker.Text,GenderComboBox.Text,userTypeComboBox.Text);
-            if (result > 0)
+            DateTime BirthOfDate = Convert.ToDateTime(dateOfBirthDateTimePicker.Text);
+            DateTime today = DateTime.Today;
+            if (BirthOfDate >= today)
             {
-                MessageBox.Show("User updated successfully");
+                MessageBox.Show("Date of Birth Can't be Today's Date or greater than Today's Date", "Selected Date Error");
+                dateOfBirthDateTimePicker.Text = Convert.ToString(today);
             }
             else
             {
-                MessageBox.Show("Error updating user");
+                UserService userService = new UserService();
+                int result = userService.UpdateUserForAdmin(id, nameTextBox.Text, userNameTextBox.Text, passwordTextBox.Text, emailTextBox.Text, dateOfBirthDateTimePicker.Text, GenderComboBox.Text, userTypeComboBox.Text);
+                if (result > 0)
+                {
+                    MessageBox.Show("User updated successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Error updating user");
+                }
             }
+            
         }
 
         private void deleteUserButton_Click(object sender, EventArgs e)
@@ -133,7 +163,8 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             
         }
 
-        private void BackToHomeButton_Click(object sender, EventArgs e)
+
+        private void backToHomeBuktton_Click(object sender, EventArgs e)
         {
             HomeForAdmin homeForAdmin = new HomeForAdmin(username);
             homeForAdmin.Show();

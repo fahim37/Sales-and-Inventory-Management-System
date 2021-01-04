@@ -76,6 +76,24 @@ namespace Sales_and_Inventory_Management_System.Data_Access_Layer
             }
             return products;
         }
+        public List<Product> GetProductsForQuantity(int quantity)
+        {
+            string sql = "SELECT * FROM Products WHERE Quantity <=" + quantity;
+            this.dataAccess = new DataAccess();
+            SqlDataReader reader = this.dataAccess.GetData(sql);
+            List<Product> products = new List<Product>();
+            while (reader.Read())
+            {
+                Product product = new Product();
+                product.ProductId = (int)reader["ProductId"];
+                product.ProductName = reader["ProductName"].ToString();
+                product.Price = Convert.ToDouble(reader["Price"]);
+                product.Quantity = (int)reader["Quantity"];
+                product.CategoryId = (int)reader["CategoryId"];
+                products.Add(product);
+            }
+            return products;
+        }
         public int GetProductQuantity(int productId)
         {
             string sql = "SELECT Quantity from Products where ProductId=" +productId;

@@ -29,15 +29,18 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerManagement));
             this.customerSearchTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.customerLoadDataGridView = new System.Windows.Forms.DataGridView();
             this.ordersLoadGridView = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lastOrderedLebel = new System.Windows.Forms.Label();
+            this.customerNameLabel = new System.Windows.Forms.Label();
             this.orderCount = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.totalOrderedAmount = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.customerNameTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -58,10 +61,9 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.label9 = new System.Windows.Forms.Label();
             this.RemoveOrderButton = new System.Windows.Forms.Button();
             this.RemoveTextBox = new System.Windows.Forms.TextBox();
-            this.lastOrderedLebel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.customerNameLabel = new System.Windows.Forms.Label();
+            this.BackToHomeButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.customerLoadDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersLoadGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -131,15 +133,25 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customers";
             // 
-            // label8
+            // lastOrderedLebel
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(532, 210);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(96, 16);
-            this.label8.TabIndex = 27;
-            this.label8.Text = "Order count :";
+            this.lastOrderedLebel.AutoSize = true;
+            this.lastOrderedLebel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastOrderedLebel.ForeColor = System.Drawing.Color.Indigo;
+            this.lastOrderedLebel.Location = new System.Drawing.Point(617, 296);
+            this.lastOrderedLebel.Name = "lastOrderedLebel";
+            this.lastOrderedLebel.Size = new System.Drawing.Size(0, 16);
+            this.lastOrderedLebel.TabIndex = 36;
+            // 
+            // customerNameLabel
+            // 
+            this.customerNameLabel.AutoSize = true;
+            this.customerNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerNameLabel.ForeColor = System.Drawing.Color.Indigo;
+            this.customerNameLabel.Location = new System.Drawing.Point(569, 86);
+            this.customerNameLabel.Name = "customerNameLabel";
+            this.customerNameLabel.Size = new System.Drawing.Size(0, 20);
+            this.customerNameLabel.TabIndex = 38;
             // 
             // orderCount
             // 
@@ -151,16 +163,6 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.orderCount.Size = new System.Drawing.Size(0, 20);
             this.orderCount.TabIndex = 28;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(533, 277);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(106, 16);
-            this.label6.TabIndex = 30;
-            this.label6.Text = "Total amount :";
-            // 
             // totalOrderedAmount
             // 
             this.totalOrderedAmount.AutoSize = true;
@@ -170,6 +172,26 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.totalOrderedAmount.Name = "totalOrderedAmount";
             this.totalOrderedAmount.Size = new System.Drawing.Size(0, 20);
             this.totalOrderedAmount.TabIndex = 29;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(532, 210);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(96, 16);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "Order count :";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(533, 277);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(106, 16);
+            this.label6.TabIndex = 30;
+            this.label6.Text = "Total amount :";
             // 
             // customerNameTextBox
             // 
@@ -385,16 +407,6 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.RemoveTextBox.Size = new System.Drawing.Size(191, 20);
             this.RemoveTextBox.TabIndex = 27;
             // 
-            // lastOrderedLebel
-            // 
-            this.lastOrderedLebel.AutoSize = true;
-            this.lastOrderedLebel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastOrderedLebel.ForeColor = System.Drawing.Color.Indigo;
-            this.lastOrderedLebel.Location = new System.Drawing.Point(617, 296);
-            this.lastOrderedLebel.Name = "lastOrderedLebel";
-            this.lastOrderedLebel.Size = new System.Drawing.Size(0, 16);
-            this.lastOrderedLebel.TabIndex = 36;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -415,15 +427,21 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.label4.TabIndex = 37;
             this.label4.Text = "Name :";
             // 
-            // customerNameLabel
+            // BackToHomeButton
             // 
-            this.customerNameLabel.AutoSize = true;
-            this.customerNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerNameLabel.ForeColor = System.Drawing.Color.Indigo;
-            this.customerNameLabel.Location = new System.Drawing.Point(569, 86);
-            this.customerNameLabel.Name = "customerNameLabel";
-            this.customerNameLabel.Size = new System.Drawing.Size(0, 20);
-            this.customerNameLabel.TabIndex = 38;
+            this.BackToHomeButton.FlatAppearance.BorderSize = 0;
+            this.BackToHomeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BackToHomeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BackToHomeButton.Image = ((System.Drawing.Image)(resources.GetObject("BackToHomeButton.Image")));
+            this.BackToHomeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BackToHomeButton.Location = new System.Drawing.Point(13, 5);
+            this.BackToHomeButton.Name = "BackToHomeButton";
+            this.BackToHomeButton.Size = new System.Drawing.Size(93, 39);
+            this.BackToHomeButton.TabIndex = 40;
+            this.BackToHomeButton.Text = "Home";
+            this.BackToHomeButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BackToHomeButton.UseVisualStyleBackColor = true;
+            this.BackToHomeButton.Click += new System.EventHandler(this.BackToHomeButton_Click);
             // 
             // CustomerManagement
             // 
@@ -431,6 +449,7 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1323, 866);
+            this.Controls.Add(this.BackToHomeButton);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox3);
@@ -492,5 +511,6 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label totalDaysLabel;
+        private System.Windows.Forms.Button BackToHomeButton;
     }
 }

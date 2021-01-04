@@ -25,25 +25,6 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             Application.Exit();
         }
 
-        private void CategoryButton_Click(object sender, EventArgs e)
-        {
-            CategoryManagement categoryManagement = new CategoryManagement(username);
-            categoryManagement.Show();
-            this.Hide();
-        }
-
-        private void ProductsButton_Click(object sender, EventArgs e)
-        {
-            ProductManagement productManagement = new ProductManagement(username);
-            productManagement.Show();
-            this.Hide();
-        }
-
-        private void EmployeeAccountUpdateButton_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void HomeForUser_Load(object sender, EventArgs e)
         {
             UserService userService = new UserService();
@@ -54,6 +35,35 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
         {
             UserManagement userManagement = new UserManagement(username);
             userManagement.Show();
+            this.Hide();
+        }
+
+
+        private void logOutButton1_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
+        }
+
+        private void productManagementButton_Click(object sender, EventArgs e)
+        {
+            ProductManagement productManagement = new ProductManagement(username);
+            productManagement.Show();
+            this.Hide();
+        }
+
+        private void orderManagementButton_Click(object sender, EventArgs e)
+        {
+            OrderManagement orderManagement = new OrderManagement(username);
+            orderManagement.Show();
+            this.Hide();
+        }
+
+        private void customerManagementButton_Click(object sender, EventArgs e)
+        {
+            CustomerManagement customerManagement = new CustomerManagement(username);
+            customerManagement.Show();
             this.Hide();
         }
     }

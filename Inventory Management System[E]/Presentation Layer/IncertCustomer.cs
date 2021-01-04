@@ -13,9 +13,11 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
 {
     public partial class IncertCustomer : Form
     {
-        public IncertCustomer()
+        string username;
+        public IncertCustomer(string username)
         {
             InitializeComponent();
+            this.username = username;
         }
 
         private void CustomerAdd_FormClosing(object sender, FormClosingEventArgs e)
@@ -28,14 +30,14 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             CustomerService customerService = new CustomerService();
             int result = customerService.AddNewCustomer(customerNameTextBox.Text, phoneNoTextBox.Text);
             this.Hide();
-            OrderManagement createSale = new OrderManagement();
+            OrderManagement createSale = new OrderManagement(username);
             createSale.Show();
         }
 
         private void backButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            OrderManagement createSale = new OrderManagement();
+            OrderManagement createSale = new OrderManagement(username);
             createSale.Show();
         }
     }

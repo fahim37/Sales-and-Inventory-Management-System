@@ -64,22 +64,44 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             userService = new UserService();
             genderComboBox.Text = GenderLabel.Text = userService.GetUserGender(id);
         }
-
-        private void updateUserInfoButton_Click(object sender, EventArgs e)
+        private void dateOfBirthTimePicker_CloseUp(object sender, EventArgs e)
         {
-            UserService userService = new UserService();
-            int result = userService.UpdateUser(id, nameTextBox.Text, useNameTextBox.Text, passwordTextBox.Text, emailTextBox.Text, dateOfBirthTimePicker.Text, genderComboBox.Text);
-            if (result > 0)
+            DateTime BirthOfDate = Convert.ToDateTime(dateOfBirthTimePicker.Text);
+            DateTime today = DateTime.Today;
+            if (BirthOfDate >= today)
             {
-                MessageBox.Show("User updated successfully");
-            }
-            else
-            {
-                MessageBox.Show("Error updating user");
+                MessageBox.Show("Date of Birth Can't be Today's Date or greater than Today's Date", "Selected Date Error");
+                dateOfBirthTimePicker.Text = Convert.ToString(today);
             }
         }
 
-        private void BackToHomeButton_Click(object sender, EventArgs e)
+        private void updateUserInfoButton_Click(object sender, EventArgs e)
+        {
+            DateTime BirthOfDate = Convert.ToDateTime(dateOfBirthTimePicker.Text);
+            DateTime today = DateTime.Today;
+            if (BirthOfDate >= today)
+            {
+                MessageBox.Show("Date of Birth Can't be Today's Date or greater than Today's Date", "Selected Date Error");
+                dateOfBirthTimePicker.Text = Convert.ToString(today);
+            }
+            else
+            {
+                UserService userService = new UserService();
+                int result = userService.UpdateUser(id, nameTextBox.Text, useNameTextBox.Text, passwordTextBox.Text, emailTextBox.Text, dateOfBirthTimePicker.Text, genderComboBox.Text);
+                if (result > 0)
+                {
+                    MessageBox.Show("User updated successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Error updating user");
+                }
+            }
+            
+        }
+
+
+        private void BackToHomeButton1_Click(object sender, EventArgs e)
         {
             HomeForAdmin homeForAdmin = new HomeForAdmin(username);
             homeForAdmin.Show();

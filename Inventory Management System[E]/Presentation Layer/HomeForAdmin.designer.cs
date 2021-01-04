@@ -28,14 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeForAdmin));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.totalOrderedAmount = new System.Windows.Forms.Label();
+            this.lastOrderedLebel = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.orderCount = new System.Windows.Forms.Label();
+            this.salesRecordButton = new System.Windows.Forms.Button();
             this.EmployeeManagementButton = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.customerManagementButton = new System.Windows.Forms.Button();
+            this.orderManagementButton = new System.Windows.Forms.Button();
             this.ProductsButton = new System.Windows.Forms.Button();
             this.CategoryButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.LogOutButton = new System.Windows.Forms.Button();
             this.AdminNamelinkLabel = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,101 +50,175 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.totalOrderedAmount);
+            this.groupBox1.Controls.Add(this.lastOrderedLebel);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.orderCount);
+            this.groupBox1.Controls.Add(this.salesRecordButton);
             this.groupBox1.Controls.Add(this.EmployeeManagementButton);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.customerManagementButton);
+            this.groupBox1.Controls.Add(this.orderManagementButton);
             this.groupBox1.Controls.Add(this.ProductsButton);
             this.groupBox1.Controls.Add(this.CategoryButton);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(101, 128);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.groupBox1.Location = new System.Drawing.Point(54, 72);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(932, 490);
+            this.groupBox1.Size = new System.Drawing.Size(1084, 631);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Admin Panel";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(422, 71);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(171, 20);
+            this.label6.TabIndex = 39;
+            this.label6.Text = "Total Sales Amount ";
+            // 
+            // totalOrderedAmount
+            // 
+            this.totalOrderedAmount.AutoSize = true;
+            this.totalOrderedAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalOrderedAmount.ForeColor = System.Drawing.Color.Indigo;
+            this.totalOrderedAmount.Location = new System.Drawing.Point(461, 115);
+            this.totalOrderedAmount.Name = "totalOrderedAmount";
+            this.totalOrderedAmount.Size = new System.Drawing.Size(0, 24);
+            this.totalOrderedAmount.TabIndex = 38;
+            // 
+            // lastOrderedLebel
+            // 
+            this.lastOrderedLebel.AutoSize = true;
+            this.lastOrderedLebel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastOrderedLebel.ForeColor = System.Drawing.Color.Indigo;
+            this.lastOrderedLebel.Location = new System.Drawing.Point(768, 113);
+            this.lastOrderedLebel.Name = "lastOrderedLebel";
+            this.lastOrderedLebel.Size = new System.Drawing.Size(0, 20);
+            this.lastOrderedLebel.TabIndex = 41;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(124, 71);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(104, 20);
+            this.label8.TabIndex = 42;
+            this.label8.Text = "Total Sales ";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(793, 71);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(138, 20);
+            this.label7.TabIndex = 40;
+            this.label7.Text = "Last Sales Date";
+            // 
+            // orderCount
+            // 
+            this.orderCount.AutoSize = true;
+            this.orderCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderCount.ForeColor = System.Drawing.Color.Indigo;
+            this.orderCount.Location = new System.Drawing.Point(154, 112);
+            this.orderCount.Name = "orderCount";
+            this.orderCount.Size = new System.Drawing.Size(0, 29);
+            this.orderCount.TabIndex = 43;
+            // 
+            // salesRecordButton
+            // 
+            this.salesRecordButton.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salesRecordButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.salesRecordButton.Location = new System.Drawing.Point(294, 426);
+            this.salesRecordButton.Name = "salesRecordButton";
+            this.salesRecordButton.Size = new System.Drawing.Size(212, 98);
+            this.salesRecordButton.TabIndex = 11;
+            this.salesRecordButton.Text = "Sales Record";
+            this.salesRecordButton.UseVisualStyleBackColor = true;
+            this.salesRecordButton.Click += new System.EventHandler(this.salesRecordButton_Click);
+            // 
             // EmployeeManagementButton
             // 
             this.EmployeeManagementButton.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmployeeManagementButton.Location = new System.Drawing.Point(120, 348);
+            this.EmployeeManagementButton.Location = new System.Drawing.Point(38, 426);
             this.EmployeeManagementButton.Name = "EmployeeManagementButton";
-            this.EmployeeManagementButton.Size = new System.Drawing.Size(306, 98);
+            this.EmployeeManagementButton.Size = new System.Drawing.Size(212, 98);
             this.EmployeeManagementButton.TabIndex = 10;
-            this.EmployeeManagementButton.Text = "Add / Edit / Remove Employee";
+            this.EmployeeManagementButton.Text = "Employee Management";
             this.EmployeeManagementButton.UseVisualStyleBackColor = true;
             this.EmployeeManagementButton.Click += new System.EventHandler(this.EmployeeManagementButton_Click);
             // 
-            // label2
+            // customerManagementButton
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(116, 302);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(180, 19);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Employee Management";
+            this.customerManagementButton.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerManagementButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.customerManagementButton.Location = new System.Drawing.Point(811, 246);
+            this.customerManagementButton.Name = "customerManagementButton";
+            this.customerManagementButton.Size = new System.Drawing.Size(212, 92);
+            this.customerManagementButton.TabIndex = 8;
+            this.customerManagementButton.Text = "Customer Management";
+            this.customerManagementButton.UseVisualStyleBackColor = true;
+            this.customerManagementButton.Click += new System.EventHandler(this.customerManagementButton_Click);
             // 
-            // button4
+            // orderManagementButton
             // 
-            this.button4.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(640, 157);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(179, 92);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Button4";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(467, 157);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(179, 92);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.orderManagementButton.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderManagementButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.orderManagementButton.Location = new System.Drawing.Point(550, 246);
+            this.orderManagementButton.Name = "orderManagementButton";
+            this.orderManagementButton.Size = new System.Drawing.Size(212, 92);
+            this.orderManagementButton.TabIndex = 7;
+            this.orderManagementButton.Text = "Order Management";
+            this.orderManagementButton.UseVisualStyleBackColor = true;
+            this.orderManagementButton.Click += new System.EventHandler(this.orderManagementButton_Click);
             // 
             // ProductsButton
             // 
             this.ProductsButton.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductsButton.Location = new System.Drawing.Point(293, 157);
+            this.ProductsButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ProductsButton.Location = new System.Drawing.Point(294, 246);
             this.ProductsButton.Name = "ProductsButton";
-            this.ProductsButton.Size = new System.Drawing.Size(179, 92);
+            this.ProductsButton.Size = new System.Drawing.Size(212, 92);
             this.ProductsButton.TabIndex = 6;
-            this.ProductsButton.Text = "Products";
+            this.ProductsButton.Text = "Product Management";
             this.ProductsButton.UseVisualStyleBackColor = true;
             this.ProductsButton.Click += new System.EventHandler(this.ProductsButton_Click);
             // 
             // CategoryButton
             // 
+            this.CategoryButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.CategoryButton.FlatAppearance.BorderSize = 0;
+            this.CategoryButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.CategoryButton.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CategoryButton.Location = new System.Drawing.Point(120, 157);
+            this.CategoryButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.CategoryButton.Location = new System.Drawing.Point(38, 246);
             this.CategoryButton.Name = "CategoryButton";
-            this.CategoryButton.Size = new System.Drawing.Size(179, 92);
+            this.CategoryButton.Size = new System.Drawing.Size(212, 92);
             this.CategoryButton.TabIndex = 5;
-            this.CategoryButton.Text = "Category";
-            this.CategoryButton.UseVisualStyleBackColor = true;
+            this.CategoryButton.Text = "Category Management";
+            this.CategoryButton.UseVisualStyleBackColor = false;
             this.CategoryButton.Click += new System.EventHandler(this.CategoryButton_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(116, 102);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Product Management";
             // 
             // LogOutButton
             // 
-            this.LogOutButton.Location = new System.Drawing.Point(921, 44);
+            this.LogOutButton.FlatAppearance.BorderSize = 0;
+            this.LogOutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LogOutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOutButton.ForeColor = System.Drawing.Color.Red;
+            this.LogOutButton.Image = ((System.Drawing.Image)(resources.GetObject("LogOutButton.Image")));
+            this.LogOutButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LogOutButton.Location = new System.Drawing.Point(1064, 15);
             this.LogOutButton.Name = "LogOutButton";
             this.LogOutButton.Size = new System.Drawing.Size(112, 36);
             this.LogOutButton.TabIndex = 1;
             this.LogOutButton.Text = "Log Out";
+            this.LogOutButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.LogOutButton.UseVisualStyleBackColor = true;
             this.LogOutButton.Click += new System.EventHandler(this.LogOutButton_Click);
             // 
@@ -146,7 +226,7 @@
             // 
             this.AdminNamelinkLabel.AutoSize = true;
             this.AdminNamelinkLabel.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdminNamelinkLabel.Location = new System.Drawing.Point(802, 53);
+            this.AdminNamelinkLabel.Location = new System.Drawing.Point(945, 24);
             this.AdminNamelinkLabel.Name = "AdminNamelinkLabel";
             this.AdminNamelinkLabel.Size = new System.Drawing.Size(51, 19);
             this.AdminNamelinkLabel.TabIndex = 2;
@@ -158,7 +238,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(753, 55);
+            this.label3.Location = new System.Drawing.Point(896, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 17);
             this.label3.TabIndex = 3;
@@ -169,7 +249,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1121, 715);
+            this.ClientSize = new System.Drawing.Size(1187, 715);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.AdminNamelinkLabel);
             this.Controls.Add(this.LogOutButton);
@@ -189,15 +269,20 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button customerManagementButton;
+        private System.Windows.Forms.Button orderManagementButton;
         private System.Windows.Forms.Button ProductsButton;
         private System.Windows.Forms.Button CategoryButton;
         private System.Windows.Forms.Button EmployeeManagementButton;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button LogOutButton;
         private System.Windows.Forms.LinkLabel AdminNamelinkLabel;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button salesRecordButton;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label totalOrderedAmount;
+        private System.Windows.Forms.Label lastOrderedLebel;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label orderCount;
     }
 }

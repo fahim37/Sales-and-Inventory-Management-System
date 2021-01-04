@@ -19,9 +19,11 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
         int productId = 0;
         int availableQuantity = 0;
         int removableQuantity = 0;
-        public CustomerManagement()
+        string username;
+        public CustomerManagement(string username)
         {
             InitializeComponent();
+            this.username = username;
             IncertCustomerButton.Click += this.RefreshGridview;
             IncertCustomerButton.Click += this.ClearFields;
             updateCustomerButton.Click += this.RefreshGridview;
@@ -201,6 +203,23 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
                 MessageBox.Show("From Date Should be Lesser than Till Date", "Date");
                 fromDateTimePicker.Text = Convert.ToString(tillDate);
                 totalDaysLabel.Text = string.Empty;
+            }
+        }
+
+        private void BackToHomeButton_Click(object sender, EventArgs e)
+        {
+            UserService userService = new UserService();
+            if (userService.GetUserType(username) == "Admin")
+            {
+                HomeForAdmin homeForAdmin = new HomeForAdmin(username);
+                homeForAdmin.Show();
+                this.Hide();
+            }
+            else
+            {
+                HomeForUser homeForUser = new HomeForUser(username);
+                homeForUser.Show();
+                this.Hide();
             }
         }
     }

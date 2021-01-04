@@ -159,6 +159,7 @@
             this.dateOfBirthDateTimePicker.Name = "dateOfBirthDateTimePicker";
             this.dateOfBirthDateTimePicker.Size = new System.Drawing.Size(208, 26);
             this.dateOfBirthDateTimePicker.TabIndex = 18;
+            this.dateOfBirthDateTimePicker.CloseUp += new System.EventHandler(this.dateOfBirthDateTimePicker_CloseUp);
             // 
             // label5
             // 

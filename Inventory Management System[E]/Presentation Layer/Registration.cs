@@ -22,9 +22,22 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
         {
             Application.Exit();
         }
+        private void dateOfBirthDateTimePicker_CloseUp(object sender, EventArgs e)
+        {
+            DateTime BirthOfDate = Convert.ToDateTime(dateOfBirthDateTimePicker.Text);
+            DateTime today = DateTime.Today;
+            if (BirthOfDate >= today)
+            {
+                MessageBox.Show("Date of Birth Can't be Today's Date or greater than Today's Date", "Selected Date Error");
+                dateOfBirthDateTimePicker.Text = Convert.ToString(today);
+            }
+        }
 
         private void submitButton_Click(object sender, EventArgs e)
         {
+            DateTime BirthOfDate = Convert.ToDateTime(dateOfBirthDateTimePicker.Text);
+            DateTime today = DateTime.Today;
+
             if (nameTextBox.Text == "")
             {
                 DialogResult result = MessageBox.Show("Name box can not be empty. To continue, Press 'OK'", "Confirmation", MessageBoxButtons.OK);
@@ -45,10 +58,12 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             {
                 DialogResult result = MessageBox.Show("Email field can not be empty. To continue,Press 'OK'", "Confirmation", MessageBoxButtons.OK);
             }
-            else if (dateOfBirthDateTimePicker.Text == "")
+            else if (BirthOfDate >= today)
             {
-                DialogResult result = MessageBox.Show("Date of Birth not selected. To continue,Press 'OK'", "Confirmation", MessageBoxButtons.OK);
+                MessageBox.Show("Date of Birth Can't be Today's Date or greater than Today's Date", "Selected Date Error");
+                dateOfBirthDateTimePicker.Text = Convert.ToString(today);
             }
+            
             else if (radioButton1.Checked == false && radioButton2.Checked == false)
             {
                 DialogResult result = MessageBox.Show("Select Gender. To continue,Press 'OK'", "Confirmation", MessageBoxButtons.OK);
@@ -86,7 +101,7 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
                     if (result > 0)
                     {
                         MessageBox.Show("User added successfully");
-                        //ClearFields(this, null);
+                        
                         nameTextBox.Text = userNameTextBox.Text = passwordTextBox.Text = confirmPasswordTextBox.Text = emailTextBox.Text = dateOfBirthDateTimePicker.Text = comboBox1.Text = string.Empty;
                         radioButton1.Checked = radioButton2.Checked = checkBox1.Checked = false;
 
@@ -102,5 +117,7 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
                 }
             }
         }
+
+        
     }
 }

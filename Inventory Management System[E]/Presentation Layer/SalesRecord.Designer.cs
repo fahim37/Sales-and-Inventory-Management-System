@@ -242,6 +242,7 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             this.HomeButton.Text = "Home";
             this.HomeButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.HomeButton.UseVisualStyleBackColor = true;
+            this.HomeButton.Click += new System.EventHandler(this.HomeButton_Click);
             // 
             // SalesRecord
             // 
