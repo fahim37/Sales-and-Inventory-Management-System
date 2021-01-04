@@ -45,7 +45,9 @@
             this.LogOutButton = new System.Windows.Forms.Button();
             this.AdminNamelinkLabel = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -64,9 +66,9 @@
             this.groupBox1.Controls.Add(this.CategoryButton);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox1.Location = new System.Drawing.Point(54, 72);
+            this.groupBox1.Location = new System.Drawing.Point(54, 87);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1084, 631);
+            this.groupBox1.Size = new System.Drawing.Size(1084, 616);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Admin Panel";
@@ -213,7 +215,7 @@
             this.LogOutButton.ForeColor = System.Drawing.Color.Red;
             this.LogOutButton.Image = ((System.Drawing.Image)(resources.GetObject("LogOutButton.Image")));
             this.LogOutButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LogOutButton.Location = new System.Drawing.Point(1064, 15);
+            this.LogOutButton.Location = new System.Drawing.Point(1063, 12);
             this.LogOutButton.Name = "LogOutButton";
             this.LogOutButton.Size = new System.Drawing.Size(112, 36);
             this.LogOutButton.TabIndex = 1;
@@ -226,7 +228,7 @@
             // 
             this.AdminNamelinkLabel.AutoSize = true;
             this.AdminNamelinkLabel.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdminNamelinkLabel.Location = new System.Drawing.Point(945, 24);
+            this.AdminNamelinkLabel.Location = new System.Drawing.Point(961, 29);
             this.AdminNamelinkLabel.Name = "AdminNamelinkLabel";
             this.AdminNamelinkLabel.Size = new System.Drawing.Size(51, 19);
             this.AdminNamelinkLabel.TabIndex = 2;
@@ -238,11 +240,21 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(896, 26);
+            this.label3.Location = new System.Drawing.Point(912, 31);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 17);
             this.label3.TabIndex = 3;
             this.label3.Text = "Admin,";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(817, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(89, 87);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // HomeForAdmin
             // 
@@ -250,6 +262,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1187, 715);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.AdminNamelinkLabel);
             this.Controls.Add(this.LogOutButton);
@@ -261,6 +274,7 @@
             this.Load += new System.EventHandler(this.HomeForAdmin_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,5 +298,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label orderCount;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

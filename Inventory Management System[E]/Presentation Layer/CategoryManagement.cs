@@ -94,15 +94,25 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
         private void deleteCategoryButton_Click(object sender, EventArgs e)
         {
             CategoryService categoryService = new CategoryService();
-            int result = categoryService.DeleteCategory(id);
-            if (result > 0)
+            bool result = categoryService.GetProductForDeleteCategory(id);
+            if (result)
             {
-                MessageBox.Show("Category deleted successfully");
+                MessageBox.Show("This Catehory have products");
             }
             else
             {
-                MessageBox.Show("Error in deleting category");
+                categoryService = new CategoryService();
+                int results = categoryService.DeleteCategory(id);
+                if (results > 0)
+                {
+                    MessageBox.Show("Category deleted successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Error in deleting category");
+                }
             }
+
         }
 
         private void categoryWiseProductcomboBox_SelectedIndexChanged(object sender, EventArgs e)

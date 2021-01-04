@@ -155,6 +155,12 @@ namespace Sales_and_Inventory_Management_System.Data_Access_Layer
             int result = this.dataAccess.ExecuteQuery(sql);
             return result;
         }
+        public int RemoveOrderByProductId(int id)
+        {
+            string sql = "DELETE FROM Sales WHERE ProductId=" + id;
+            int result = this.dataAccess.ExecuteQuery(sql);
+            return result;
+        }
         public int RemoveOrderByCusId(int id)
         {
             string sql = "DELETE FROM Sales WHERE CustomerId=" + id;
@@ -178,6 +184,13 @@ namespace Sales_and_Inventory_Management_System.Data_Access_Layer
         public string OrderCount(int id)
         {
             string sql = "SELECT COUNT (ProductId) FROM Sales WHERE CustomerId=" + id;
+            this.dataAccess = new DataAccess();
+            string result = this.dataAccess.ExecuteScalar(sql);
+            return result;
+        }
+        public string productOrderCount(int id)
+        {
+            string sql = "SELECT COUNT (ProductId) FROM Sales WHERE ProductId=" + id;
             this.dataAccess = new DataAccess();
             string result = this.dataAccess.ExecuteScalar(sql);
             return result;

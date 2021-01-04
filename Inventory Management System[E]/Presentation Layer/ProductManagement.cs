@@ -61,7 +61,7 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
 
         void ClearFields(object sender, EventArgs e)
         {
-            productNameTextBox.Text= productPriceTextBox.Text = productQuantityTextBox.Text = productCategoryComboBox.Text = searchProductNameTextBox.Text=addQuantityProductNameTextBox.Text=addProductQuantityTextBox.Text = string.Empty;
+            productNameTextBox.Text= productPriceTextBox.Text = productQuantityTextBox.Text = productCategoryComboBox.Text = searchProductNameTextBox.Text=addQuantityProductNameTextBox.Text=addProductQuantityTextBox.Text = searchByQuantityNumberTextBox.Text = string.Empty;
         }
 
         private void addProductButton_Click(object sender, EventArgs e)
@@ -116,11 +116,12 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             int result = productService.DeleteProduct(id);
             if (result > 0)
             {
+                
                 MessageBox.Show("Product deleted successfully");
             }
             else
             {
-                MessageBox.Show("Error in deleting product");
+                MessageBox.Show("Remove Customers Orders First to Remove Product.","Error in Removing");
             }
         }
 

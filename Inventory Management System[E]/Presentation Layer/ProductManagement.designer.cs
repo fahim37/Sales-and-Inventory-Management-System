@@ -57,6 +57,7 @@
             this.searchByQuantityNumberTextBox = new System.Windows.Forms.TextBox();
             this.loadInsufficientQuantityProductsListGridView = new System.Windows.Forms.DataGridView();
             this.backToHomeBuktton1 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loadProductListGridView)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -307,6 +308,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.searchByQuantityNumberTextBox);
             this.groupBox4.Controls.Add(this.loadInsufficientQuantityProductsListGridView);
@@ -322,11 +324,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(139, 43);
+            this.label7.Location = new System.Drawing.Point(91, 43);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(255, 17);
+            this.label7.Size = new System.Drawing.Size(309, 17);
             this.label7.TabIndex = 13;
-            this.label7.Text = "Products which have Quantity less than";
+            this.label7.Text = "Products which have Quantity less than or equal";
             // 
             // searchByQuantityNumberTextBox
             // 
@@ -363,6 +365,16 @@
             this.backToHomeBuktton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.backToHomeBuktton1.UseVisualStyleBackColor = true;
             this.backToHomeBuktton1.Click += new System.EventHandler(this.backToHomeBuktton1_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(521, 41);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(134, 19);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "(Default value 10)";
             // 
             // ProductManagement
             // 
@@ -425,5 +437,6 @@
         private System.Windows.Forms.TextBox addQuantityProductNameTextBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button backToHomeBuktton1;
+        private System.Windows.Forms.Label label9;
     }
 }

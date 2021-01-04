@@ -53,5 +53,9 @@ namespace Sales_and_Inventory_Management_System.Business_Logic_Layer
         {
             return this.categoryDataAccess.GetProductByCategory(categoryName);
         }
+        public bool GetProductForDeleteCategory(int categoryId)
+        {
+            return categoryDataAccess.GetProductByCategoryId(categoryId);
+        }
     }
 }

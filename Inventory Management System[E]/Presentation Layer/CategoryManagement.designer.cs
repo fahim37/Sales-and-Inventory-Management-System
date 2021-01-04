@@ -112,6 +112,7 @@
             // 
             // loadCategoryDataGridView
             // 
+            this.loadCategoryDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.loadCategoryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.loadCategoryDataGridView.Location = new System.Drawing.Point(689, 217);
             this.loadCategoryDataGridView.Name = "loadCategoryDataGridView";
@@ -131,6 +132,7 @@
             // 
             // categoryWiseProductDataGridView
             // 
+            this.categoryWiseProductDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.categoryWiseProductDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.categoryWiseProductDataGridView.Location = new System.Drawing.Point(0, 103);
             this.categoryWiseProductDataGridView.Name = "categoryWiseProductDataGridView";

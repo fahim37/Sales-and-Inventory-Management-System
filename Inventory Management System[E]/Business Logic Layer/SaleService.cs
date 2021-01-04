@@ -85,6 +85,10 @@ namespace Sales_and_Inventory_Management_System.Business_Logic_Layer
         {
             return saleDataAccess.OrderCount(id);
         }
+        public string productOrderCount(int id)
+        {
+            return saleDataAccess.productOrderCount(id);
+        }
         public string TotalOrderedAmountByDate(int id, string from, string to)
         {
             return saleDataAccess.TotalAmountByDate(id,from,to);

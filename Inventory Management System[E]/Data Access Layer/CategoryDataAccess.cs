@@ -103,5 +103,18 @@ namespace Sales_and_Inventory_Management_System.Data_Access_Layer
             }
             return products;
         }
+        public bool GetProductByCategoryId(int categoryId)
+        {
+            string sql = "SELECT * FROM Products WHERE CategoryId=" + categoryId;
+            SqlDataReader reader = dataAccess.GetData(sql);
+            if (reader.Read())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

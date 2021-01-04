@@ -49,7 +49,13 @@ namespace Sales_and_Inventory_Management_System.Business_Logic_Layer
         }
         public int DeleteProduct(int productId)
         {
-            return this.productDataAcess.DeleteProduct(productId);
+            SaleService saleService = new SaleService();
+            int orderCount = Convert.ToInt32(saleService.productOrderCount(productId));
+            if (orderCount == 0)
+            {
+                return this.productDataAcess.DeleteProduct(productId);
+            }
+            else return 0;
         }
         public List<Product> GetProductListForSearch(string productName)
         {

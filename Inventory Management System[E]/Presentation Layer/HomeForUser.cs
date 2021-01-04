@@ -66,5 +66,12 @@ namespace Sales_and_Inventory_Management_System.Presentation_Layer
             customerManagement.Show();
             this.Hide();
         }
+
+        private void CategoryButton_Click(object sender, EventArgs e)
+        {
+            CategoryManagement categoryManagement = new CategoryManagement(username);
+            categoryManagement.Show();
+            this.Hide();
+        }
     }
 }
