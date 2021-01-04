@@ -79,9 +79,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(422, 71);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(171, 20);
+            this.label6.Size = new System.Drawing.Size(180, 20);
             this.label6.TabIndex = 39;
-            this.label6.Text = "Total Sales Amount ";
+            this.label6.Text = "Total Orders Amount ";
             // 
             // totalOrderedAmount
             // 
@@ -109,9 +109,9 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(124, 71);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(104, 20);
+            this.label8.Size = new System.Drawing.Size(113, 20);
             this.label8.TabIndex = 42;
-            this.label8.Text = "Total Sales ";
+            this.label8.Text = "Total Orders ";
             // 
             // label7
             // 
@@ -119,9 +119,9 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(793, 71);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(138, 20);
+            this.label7.Size = new System.Drawing.Size(147, 20);
             this.label7.TabIndex = 40;
-            this.label7.Text = "Last Sales Date";
+            this.label7.Text = "Last Orders Date";
             // 
             // orderCount
             // 
